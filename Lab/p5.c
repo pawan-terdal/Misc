@@ -1,3 +1,4 @@
+#include<ctype.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include<malloc.h>
@@ -22,7 +23,7 @@ int Pop(tower *t)
 	if(t->top == -1)
 	{
 		printf("Underflow.");
-		return;
+		return -9999;
 	}
 	t->top--;
 	return t->arr[t->top+1];
@@ -90,7 +91,7 @@ void Hanoi(char a , char b, char  c, int n)
 	if(n>0)
 	{
 		Hanoi(a,c,b,n-1);
-		printf("Tower %c to Tower %c\n",a,c);
+		printf("Move Disk %d from Tower %c to Tower %c\n",n,a,c);
 		Hanoi(b,a,c,n-1);
 	}
 }

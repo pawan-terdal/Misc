@@ -1,22 +1,25 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define MAX 5
+#define MAX 3  
+
+int count = 0;
 
 void Enqueue(char queue[], int *front, int *rear, char elem)
 {
 	if(*front == -1)
 	{
+		count++;
 		*front = *rear = 0;
 		queue[*rear] = elem;
 		return;
 	}
-
+	
 	if((*rear+1)%MAX == *front)
 	{
 		printf("Overflow.\n");
 		return;
 	}
-	
+	count++;
 	*rear= (*rear+1)%MAX;
 	
 	queue[*rear] = elem;
@@ -31,7 +34,7 @@ char Dequeue(char queue[], int *front,int *rear)
 		printf("Underflow.\n");
 		return '\0';
 	}
-	
+	count--;
 	elem = queue[*front];
 	
 	if(*rear == *front)
@@ -47,23 +50,15 @@ char Dequeue(char queue[], int *front,int *rear)
 void Display(char queue[], int front,int rear)
 {
 	int i;
-	int l;
+	int k;
 	if(front == -1)
 	{
 		printf("Oueue Empty.\n");
 		return;
 	}
-	if(rear < front)
+	for(i = front, k = 0; k < count; k++,i++)
 	{
-		l = MAX - (front - rear);
-	}
-	else
-	{
-		l = (rear - front);
-	}
-	for(i = 0;i <= l; i++)
-	{
-		printf("%c ",queue[(front + i)%MAX]);
+		printf("%c ",queue[i%MAX]);
 	}
 	printf("\n");
 }
