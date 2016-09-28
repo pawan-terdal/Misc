@@ -1,14 +1,16 @@
 def Pattern(num) :
     k = num - 1
-    for i in xrange(k,-k-1,-1) :
+    for i in range(k,-k-1,-1) :
         val = 1
-        for j in xrange(-k,k+1) :
+        for j in range(-k,k+1) :
             if(abs(i) >= abs(j) and val) :
-                print(str(abs(i) + 1))
+                print(str(abs(i) + 1), end="")
                 val = 0
             else :
-                print(" ")
+                print(" ", end="")
                 val = 1
         print("")
 
-Pattern(3)
+print("Enter num : ")
+num = int(input())
+Pattern(num)
