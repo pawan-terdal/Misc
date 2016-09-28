@@ -11,6 +11,6 @@ def Pattern(num) :
                 val = 1
         print("")
 
-print("Enter num : ")
+print("Enter num : ", end="")
 num = int(input())
 Pattern(num)
