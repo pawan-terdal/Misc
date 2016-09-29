@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def Pattern(num) :
     k = num - 1
     for i in range(k,-k-1,-1) :
