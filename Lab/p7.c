@@ -4,11 +4,11 @@
 
 typedef struct
 {
-	char usn[11];
+	char usn[12];
 	char name[20];
 	char branch[25];
 	int sem;
-	char phNo[11];
+	char phNo[12];
 }student;
 
 struct node
@@ -23,14 +23,14 @@ void InsertBeg(student s, int *count)
 	*count += 1;
 	fflush(stdin);
 	node *new = (node *)malloc(sizeof(node));
-	if(new == NULL)
+	if (new == NULL)
 	{
 		printf("Memory allocation failed.");
 	}
-	new->s=s;
+	new->s = s;
 	new->next = NULL;
 
-	if(first == NULL)
+	if (first == NULL)
 	{
 		first = new;
 	}
@@ -41,27 +41,27 @@ void InsertBeg(student s, int *count)
 	}
 }
 
-void InsertEnd(student s,int *count)
+void InsertEnd(student s, int *count)
 {
 	*count += 1;
 	fflush(stdin);
-	node *new =(node *) malloc(sizeof(node));
+	node *new = (node *)malloc(sizeof(node));
 
-	if(new == NULL)
+	if (new == NULL)
 	{
 		printf("Memory allocation failed.");
 	}
 	new->next = NULL;
 	new->s = s;
 
-	if(first == NULL)
+	if (first == NULL)
 	{
 		first = new;
 	}
 	else
 	{
 		node *temp = first;
-		while(temp->next != NULL)
+		while (temp->next != NULL)
 		{
 			temp = temp->next;
 		}
@@ -71,7 +71,7 @@ void InsertEnd(student s,int *count)
 
 void DeleteBeg(int *count)
 {
-	if(first == NULL)
+	if (first == NULL)
 	{
 		printf("Underflow.\n");
 		return;
@@ -83,7 +83,7 @@ void DeleteBeg(int *count)
 }
 void DeleteEnd(int *count)
 {
-	if(first == NULL)
+	if (first == NULL)
 	{
 		printf("Underflow.\n");
 		return;
@@ -91,7 +91,7 @@ void DeleteEnd(int *count)
 	*count -= 1;
 	node *temp1 = first;
 	node *temp2 = first->next;
-	while(temp2->next != NULL)
+	while (temp2->next != NULL)
 	{
 		temp1 = temp1->next;
 		temp2 = temp2->next;
@@ -119,51 +119,51 @@ void GetStudentDetails(student *s)
 	getchar();
 	fflush(stdin);
 	printf("Enter USN : ");
-	fgets(s->usn,11,stdin);
+	fgets(s->usn, 12, stdin);
 	printf("Enter Name : ");
-	fgets(s->name,20,stdin);
+	fgets(s->name, 20, stdin);
 	printf("Enter Branch : ");
-	fgets(s->branch,25,stdin);
+	fgets(s->branch, 25, stdin);
 	printf("Enter Sem : ");
-	scanf("%d",&s->sem);
+	scanf("%d", &s->sem);
 	fflush(stdin);
 	getchar();
 	printf("Enter Phone Number : ");
-	fgets(s->phNo,11,stdin); 
+	fgets(s->phNo, 12, stdin);
 }
 
 void PrintStudentDetails(student s)
 {
 	printf("USN : ");
-	printf("%s",s.usn);
+	printf("%s", s.usn);
 	printf("Name : ");
-	printf("%s",s.name);
+	printf("%s", s.name);
 	printf("Branch : ");
-	printf("%s",s.branch);
+	printf("%s", s.branch);
 	printf("Sem : ");
-	printf("%d",s.sem);
+	printf("%d", s.sem);
 	printf("\nPhone Number : ");
-	printf("%s",s.phNo);
-	printf("*****************\n"); 
+	printf("%s", s.phNo);
+	printf("*****************\n");
 }
 
-void AddStudents(int n,int *count)
+void AddStudents(int n, int *count)
 {
 	int i;
-	for(i = 0; i < n;i++)
-	{		
+	for (i = 0; i < n; i++)
+	{
 		student s;
 		GetStudentDetails(&s);
-		InsertEnd(s,count);		
+		InsertEnd(s, count);
 	}
 }
 
 void DisplayStudents(int count)
 {
-	printf("Count : %d\n",count);
-	printf("*****************\n"); 
+	printf("Count : %d\n", count);
+	printf("*****************\n");
 	node *temp = first;
-	while(temp != NULL)
+	while (temp != NULL)
 	{
 		PrintStudentDetails(temp->s);
 		temp = temp->next;
@@ -175,50 +175,50 @@ int main()
 	int n;
 	student s;
 	first = NULL;
-	
+
 	DisplayMenu();
-	int count = 0;		
-	while(1)
+	int count = 0;
+	while (1)
 	{
 		int choice;
 		student s;
 		printf("Enter your choice : ");
-		scanf("%d",&choice);
-		
-		switch(choice)
+		scanf("%d", &choice);
+
+		switch (choice)
 		{
-			case 1 :
+			case 1:
 				printf("Enter number of students : ");
-				scanf("%d",&n);
-				AddStudents(n,&count);
+				scanf("%d", &n);
+				AddStudents(n, &count);
 				break;
-			case 2 :
+			case 2:
 				GetStudentDetails(&s);
-				InsertBeg(s,&count);
-				break;		
-			case 3 :		
-				GetStudentDetails(&s);
-				InsertEnd(s,&count);
+				InsertBeg(s, &count);
 				break;
-			case 4 :
+			case 3:
+				GetStudentDetails(&s);
+				InsertEnd(s, &count);
+				break;
+			case 4:
 				DeleteBeg(&count);
 				break;
-			case 5 :
+			case 5:
 				DeleteEnd(&count);
-				break;		
-			case 6 :
+				break;
+			case 6:
 				printf("The Students are as follows : \n");
 				DisplayStudents(count);
 				break;
-			case 7 :
+			case 7:
 				printf("\t1. Push\n\t2. Pop\n\tEnter : ");
-				scanf("%d",&n);
-				if(n == 1)
+				scanf("%d", &n);
+				if (n == 1)
 				{
 					GetStudentDetails(&s);
-					InsertBeg(s,&count);
+					InsertBeg(s, &count);
 				}
-				else if(n == 2)
+				else if (n == 2)
 				{
 					DeleteBeg(&count);
 				}
@@ -227,15 +227,15 @@ int main()
 					printf("Wrong Option.\n");
 				}
 				break;
-			case 8 :
+			case 8:
 				printf("\t1. Enqueue\n\t2. Dequeue\n\tEnter : ");
-				scanf("%d",&n);
-				if(n == 1)
+				scanf("%d", &n);
+				if (n == 1)
 				{
 					GetStudentDetails(&s);
-					InsertEnd(s,&count);
+					InsertEnd(s, &count);
 				}
-				else if(n == 2)
+				else if (n == 2)
 				{
 					DeleteBeg(&count);
 				}
@@ -244,14 +244,14 @@ int main()
 					printf("Wrong Option.\n");
 				}
 				break;
-			case 9 :
+			case 9:
 				exit(0);
-			default :
+			default:
 				printf("Wrong choice.\n");
 				break;
-				
+
 		}
-		printf("************************************************************\n");	
-		
+		printf("************************************************************\n");
+
 	}
 }
