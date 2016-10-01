@@ -81,7 +81,7 @@ int main()
 	{
 		int choice;
 		char elem;
-		printf("\nEnter your choice :");
+		printf("\nEnter your choice : ");
 		scanf("%d",&choice);
 		switch(choice)
 		{

@@ -115,7 +115,32 @@ int CheckExp(int arr1[],int arr2[])
 
 void PolySum(node **p1, node **p2, node **p3)
 {
-	
+
+	if(*p1 == NULL  && *p2	== NULL)
+	{
+		return;
+	}
+	else if(*p1 == NULL)
+	{
+		node **t = &((*p2)->next);
+		do
+		{
+			Insert(p3,(*t)->co,(*t)->exp);
+			t = &((*t)->next);					
+		}while(*t != (*p2)->next);
+		return;
+	}
+	else if(*p2 == NULL)
+	{
+		node **t = &((*p1)->next);
+		do
+		{
+			Insert(p3,(*t)->co,(*t)->exp);					
+			t = &((*t)->next);					
+		}while(*t != (*p1)->next);
+		return;
+		return;
+	}
 	node **t1 = &((*p1)->next);
 	do
 	{
@@ -155,7 +180,7 @@ void Clear(node **t)
 	{
 		return;
 	}
-	
+
 	while(*t != NULL)
 	{
 		if(*t == (*t)->next)
@@ -165,11 +190,12 @@ void Clear(node **t)
 			*t = NULL;
 			return;
 		}
-		
-		node *temp = ((*t)->next);
-		(*t)->next = (temp)->next;
-		(temp)->next = NULL;
+			
+		node *temp = (*t)->next;
+		(*t)->next = temp->next;
+		temp->next = NULL;
 		free(temp);
+		
 	}
 	*t = NULL;
 }
@@ -191,20 +217,32 @@ int main()
 		switch(choice)
 		{
 			case 1 :
-				printf("Enter Co efficient and Powers of x,y,z :");
+				printf("Enter Co efficient and Powers of x,y,z : ");
 				scanf("%d %d %d %d", &co , exp , exp + 1, exp +2);
 				if(!Insert(&p1,co,exp))
 				{
-					printf("Element already present.");
+					printf("Element already present.\n");
 				}
+				Clear(&p3);
+				p3 = NULL;
 				break;
 
 			case 2 :
-				printf("Enter Co efficient and Powers of x,y,z :");
+				printf("Enter Co efficient and Powers of x,y,z : ");
 				scanf("%d %d %d %d", &co , exp , exp + 1, exp +2);
-				Insert(&p2,co,exp);
+				if(!Insert(&p2,co,exp))
+				{
+					printf("Element already present.\n");
+				}
+				Clear(&p3);
+				p3 = NULL;
 				break;
 			
+			case 4 :
+				Clear(&p3);
+				p3 = NULL;
+				PolySum(&p1,&p2,&p3);
+				
 			case 3 :
 				printf("Polynomial 1 : ");
 				Display(&p1);
@@ -214,16 +252,12 @@ int main()
 				Display(&p3);
 				break;
 
-			case 4 :
-				Clear(&p3);
-				p3 = NULL;
-				PolySum(&p1,&p2,&p3);
-				break;
 			case 5 :
 				Clear(&p1);
 				Clear(&p2);
 				Clear(&p3);
 				p1 = p2 = p3 = NULL;
+				printf("Polynomials Reseted.\n");
 				break;								
 			case 0 :
 				exit(1);
@@ -233,5 +267,6 @@ int main()
 				break;
 				
 		}
+		printf("********************************************************************************\n");
 	}
 }

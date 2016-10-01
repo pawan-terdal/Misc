@@ -1,3 +1,14 @@
-name = "Nithin"
-print(name.rjust(12).lower().rjust(20))
-print(name)
+#!/usr/bin/python3
+
+import json
+import pprint
+import pyperclip
+
+j = pyperclip.paste()
+
+class Abc(object):
+    def __init__(self, j) :
+        self.__dict__ = json.loads(j)
+
+p = Abc(j)
+print(str(p.streams[0]["level"]))

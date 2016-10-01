@@ -128,7 +128,7 @@ void DisplayMenu()
 	printf("4. Delete At Beginning\n");
 	printf("5. Delete At End.\n");
 	printf("6. Display.\n");
-	printf("7. Use As Double Ended Queue.\n");
+	printf("7. Use As Double Ended Queue(Output Restricted).\n");
 	printf("8. Exit.\n");
 }
 
@@ -260,8 +260,8 @@ int main()
 				}
 				break;
 			case 7 :
-				printf("\t1. Enqueue Front\n\t2. Dequeue End\n\t");
-				printf("3. Enqueue End\n\t4. Dequeue Front\n\tEnter :");
+				printf("\t1. Enqueue Front\n\t");
+				printf("2. Enqueue Rear\n\t3. Dequeue Front\n\tEnter :");
 				scanf("%d",&n);
 				if(n == 1)
 				{
@@ -270,14 +270,10 @@ int main()
 				}
 				else if(n == 2)
 				{
-			 		DeleteEnd(&count);		
-				}
-				else if(n == 3)
-				{
 					GetEmployeeDetails(&e);
                                		InsertEnd(e,&count);
 				}
-				else if(n == 4)
+				else if(n == 3)
 				{
 					DeleteBeg(&count);
 				}
@@ -294,6 +290,6 @@ int main()
 			break;
 				
 		}	
-		
+		printf("*****************************************************\n");	
 	}
 }
