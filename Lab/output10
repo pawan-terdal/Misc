@@ -1,0 +1,35 @@
+Output Program 10
+Name : P G Nithin Reddy (1PE15IS072)
+Script started on Saturday 01 October 2016 07:24:47 PM DST
+]0;redNithin@DESKTOP-OEB9L5G: /mnt/c/Users/reddy/Desktop/LinuxPrograms/LabredNithin@DESKTOP-OEB9L5G:/mnt/c/Users/reddy/Desktop/LinuxPrograms/Lab$ ./a.out 
+1. Insert N elements.
+2. Inorder Display.
+3. Preorder Display.
+4. Postorder Display.
+5. Binary Search.
+0. Exit.
+Enter choice : 1
+Enter number of elements : 12
+Enter 12 elements : 6 9 5 2 8 15 24 14 7 8 5 2
+**************************************************************
+Enter choice : 2
+Inorder : 2 2 5 5 6 7 8 8 9 14 15 24 
+**************************************************************
+Enter choice : 3
+Preorder : 6 5 2 2 5 9 8 7 8 15 14 24 
+**************************************************************
+Enter choice : 4
+Postorder : 2 2 5 5 7 8 8 14 24 15 9 6 
+**************************************************************
+Enter choice : 5
+Enter an element to search : 15
+Element FOUND.
+**************************************************************
+Enter choice : 5
+Enter an element to search : 16
+Element NOT FOUND.
+**************************************************************
+Enter choice : 0
+]0;redNithin@DESKTOP-OEB9L5G: /mnt/c/Users/reddy/Desktop/LinuxPrograms/LabredNithin@DESKTOP-OEB9L5G:/mnt/c/Users/reddy/Desktop/LinuxPrograms/Lab$ exit
+
+Script done on Saturday 01 October 2016 07:26:49 PM DST

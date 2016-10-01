@@ -6,59 +6,59 @@ int count = 0;
 
 void Enqueue(char queue[], int *front, int *rear, char elem)
 {
-	if(*front == -1)
+	if (*front == -1)
 	{
 		count++;
 		*front = *rear = 0;
 		queue[*rear] = elem;
 		return;
 	}
-	
-	if((*rear+1)%MAX == *front)
+
+	if ((*rear + 1) % MAX == *front)
 	{
 		printf("Overflow.\n");
 		return;
 	}
 	count++;
-	*rear= (*rear+1)%MAX;
-	
+	*rear = (*rear + 1) % MAX;
+
 	queue[*rear] = elem;
 }
 
-char Dequeue(char queue[], int *front,int *rear)
+char Dequeue(char queue[], int *front, int *rear)
 {
 	char elem;
-	
-	if(*front == -1)
+
+	if (*front == -1)
 	{
 		printf("Underflow.\n");
 		return '\0';
 	}
 	count--;
 	elem = queue[*front];
-	
-	if(*rear == *front)
+
+	if (*rear == *front)
 	{
 		*front = *rear = -1;
 		return elem;
 	}
-	
-	*front = (*front+1)%MAX;
+
+	*front = (*front + 1) % MAX;
 	return elem;
 }
 
-void Display(char queue[], int front,int rear)
+void Display(char queue[], int front, int rear)
 {
 	int i;
 	int k;
-	if(front == -1)
+	if (front == -1)
 	{
 		printf("Oueue Empty.\n");
 		return;
 	}
-	for(i = front, k = 0; k < count; k++,i++)
+	for (i = front, k = 0; k < count; k++, i++)
 	{
-		printf("%c ",queue[i%MAX]);
+		printf("%c ", queue[i%MAX]);
 	}
 	printf("\n");
 }
@@ -75,39 +75,39 @@ void DisplayMenu()
 int main()
 {
 	char queue[MAX];
-	int front=-1,rear=-1;
+	int front = -1, rear = -1;
 	DisplayMenu();
-	while(1)
+	while (1)
 	{
 		int choice;
 		char elem;
 		printf("\nEnter your choice : ");
-		scanf("%d",&choice);
-		switch(choice)
+		scanf("%d", &choice);
+		switch (choice)
 		{
-			case 1 :
+			case 1:
 				getchar();
 				fflush(stdin);
 				printf("Enter a character : ");
-				scanf("%c",&elem);
-				Enqueue(queue,&front,&rear,elem);
+				scanf("%c", &elem);
+				Enqueue(queue, &front, &rear, elem);
 				break;
-			case 2 :
-				elem = Dequeue(queue,&front,&rear);
-				if(elem != '\0')
+			case 2:
+				elem = Dequeue(queue, &front, &rear);
+				if (elem != '\0')
 				{
-					printf("The element Dequeued is : %c\n",elem);
+					printf("The element Dequeued is : %c\n", elem);
 				}
 				break;
-			case 3 :
-				Display(queue,front,rear);
+			case 3:
+				Display(queue, front, rear);
 				break;
-			case 4 :
+			case 4:
 				exit(0);
-			default :
+			default:
 				printf("Wrong choice. Enter again.\n");
-				break;	
-		}	
+				break;
+		}
 	}
 }
 

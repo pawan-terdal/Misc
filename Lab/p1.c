@@ -68,20 +68,20 @@ void Delete(int pos)
 	int i;
 	pos--;
 	if(N==-1)
-        {
-                printf("\nCreate an Array first.");
-                return;
-        }
-        if(pos>=N || pos<0)
-        {
-                printf("\nInvalid Position.");
-                return;
-        }
-        if(N==0)
-        {
-                printf("\nUnderflow detected.");
-                return;
-        }
+		{
+				printf("\nCreate an Array first.");
+				return;
+		}
+		if(pos>=N || pos<0)
+		{
+				printf("\nInvalid Position.");
+				return;
+		}
+		if(N==0)
+		{
+				printf("\nUnderflow detected.");
+				return;
+		}
 	for(i = pos;i<N-1;i++)
 	{
 		arr[i]=arr[i+1];
@@ -93,10 +93,10 @@ int main()
 {
 	int choice,a,b,exit=0;
 	 printf("\n1.Create An Array.");
-         printf("\n2.Display Elements.");
-         printf("\n3.Insert an Element.");
-         printf("\n4.Delete an Element.");
-         printf("\n5.Exit.");
+		 printf("\n2.Display Elements.");
+		 printf("\n3.Insert an Element.");
+		 printf("\n4.Delete an Element.");
+		 printf("\n5.Exit.");
 
 	while(1)
 	{

@@ -11,7 +11,7 @@ typedef struct
 	int top;
 }tower;
 
-tower *towerA,*towerB,*towerC;
+tower *towerA, *towerB, *towerC;
 
 void Reset(tower *t)
 {
@@ -20,22 +20,22 @@ void Reset(tower *t)
 
 int Pop(tower *t)
 {
-	if(t->top == -1)
+	if (t->top == -1)
 	{
 		printf("Underflow.");
 		return -9999;
 	}
 	t->top--;
-	return t->arr[t->top+1];
+	return t->arr[t->top + 1];
 }
 
 void Push(tower *t, int elem)
 {
-	if(t->top == MAX - 1)
+	if (t->top == MAX - 1)
 	{
 		printf("Overflow.");
 		return;
-	} 
+	}
 	t->top++;
 	t->arr[t->top] = elem;
 }
@@ -43,56 +43,56 @@ void Push(tower *t, int elem)
 void EvaluatePostfix(char postfix[])
 {
 	tower *t = malloc(sizeof(tower));
-	t->top = -1;	
+	t->top = -1;
 	int i = 0;
-	while(postfix[i+1]!='\0')
+	while (postfix[i + 1] != '\0')
 	{
 		char ch = postfix[i];
-		if(isdigit(ch))
+		if (isdigit(ch))
 		{
-			Push(t,(int)ch-48);
+			Push(t, (int)ch - 48);
 		}
 		else
 		{
 			int op1 = Pop(t);
 			int op2 = Pop(t);
-			switch(ch)
+			switch (ch)
 			{
-				case '^' :
-					Push(t,(int)pow(op2,op1));
+				case '^':
+					Push(t, (int)pow(op2, op1));
 					break;
-				case '/' :
-					Push(t,op2/op1);
+				case '/':
+					Push(t, op2 / op1);
 					break;
-				case '*' :
-					Push(t,op2*op1);
+				case '*':
+					Push(t, op2*op1);
 					break;
-				case '%' :
-					Push(t,op2%op1);
+				case '%':
+					Push(t, op2%op1);
 					break;
-				case '+' :
-					Push(t,op2+op1);
+				case '+':
+					Push(t, op2 + op1);
 					break;
-				case '-' :
-					Push(t,op2-op1);
+				case '-':
+					Push(t, op2 - op1);
 					break;
-				default :
-					break;	
+				default:
+					break;
 			}
 		}
 		i++;
 	}
-	printf("The Result of Postfix : %d\n",Pop(t));
+	printf("The Result of Postfix : %d\n", Pop(t));
 	free(t);
 }
 
-void Hanoi(char a , char b, char  c, int n)
+void Hanoi(char a, char b, char  c, int n)
 {
-	if(n>0)
+	if (n > 0)
 	{
-		Hanoi(a,c,b,n-1);
-		printf("Move Disk %d from Tower %c to Tower %c\n",n,a,c);
-		Hanoi(b,a,c,n-1);
+		Hanoi(a, c, b, n - 1);
+		printf("Move Disk %d from Tower %c to Tower %c\n", n, a, c);
+		Hanoi(b, a, c, n - 1);
 	}
 }
 
@@ -106,36 +106,36 @@ void DisplayMenu()
 
 int main()
 {
-	int choice,n;
+	int choice, n;
 	char postfix[MAX];
-	
+
 	DisplayMenu();
-	
-	while(1)
+
+	while (1)
 	{
 		printf("Enter your choice : ");
-		scanf("%d",&choice);
+		scanf("%d", &choice);
 		getchar();
-		switch(choice)
+		switch (choice)
 		{
-			case 1 :				
+			case 1:
 				printf("Enter a postfix expression : ");
-        			fgets(postfix,MAX,stdin);
+				fgets(postfix, MAX, stdin);
 				EvaluatePostfix(postfix);
 				break;
-			case 2 :
+			case 2:
 				fflush(stdin);
 				getchar();
 				printf("Enter number of disks : ");
-				scanf("%d",&n);
-				Hanoi('A','B','C',n);		
+				scanf("%d", &n);
+				Hanoi('A', 'B', 'C', n);
 				break;
-			case 3 :
+			case 3:
 				exit(0);
-			default :
+			default:
 				printf("Wrong choice. Enter again.\n");
-		
+
 		}
 	}
-		
+
 }

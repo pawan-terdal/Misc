@@ -16,15 +16,15 @@ struct node
 {
 	Employee e;
 	struct node *right;
-	struct node *left;	
-}*first = NULL,*last = NULL;
+	struct node *left;
+}*first = NULL, *last = NULL;
 
 typedef struct node node;
 
 void InsertBeg(Employee e, int *count)
 {
 	node *new = (node *)malloc(sizeof(node));
-	if(NULL == new)
+	if (NULL == new)
 	{
 		printf("Memory Allocation Failed.\n");
 		return;
@@ -33,8 +33,8 @@ void InsertBeg(Employee e, int *count)
 	new->e = e;
 	new->right = NULL;
 	new->left = NULL;
-	
-	if(NULL == first)
+
+	if (NULL == first)
 	{
 		first = last = new;
 	}
@@ -44,13 +44,13 @@ void InsertBeg(Employee e, int *count)
 		first->left = new;
 		first = new;
 	}
-} 
+}
 
 void InsertEnd(Employee e, int *count)
 {
-	
+
 	node *new = (node *)malloc(sizeof(node));
-	if(NULL == new)
+	if (NULL == new)
 	{
 		printf("Memory Allocation Failed.\n");
 		return;
@@ -59,8 +59,8 @@ void InsertEnd(Employee e, int *count)
 	new->e = e;
 	new->right = NULL;
 	new->left = NULL;
-	
-	if(NULL == first)
+
+	if (NULL == first)
 	{
 		first = last = new;
 	}
@@ -74,11 +74,11 @@ void InsertEnd(Employee e, int *count)
 
 void DeleteBeg(int *count)
 {
-	if(NULL != first)
+	if (NULL != first)
 	{
 		*count -= 1;
 		node *temp = first;
-		if(NULL == first->right)
+		if (NULL == first->right)
 		{
 			first = last = NULL;
 			temp->right = NULL;
@@ -93,16 +93,20 @@ void DeleteBeg(int *count)
 			free(temp);
 		}
 	}
+	else
+	{
+		printf("Underflow.\n");
+	}
 }
 
 
 void DeleteEnd(int *count)
 {
-	if(NULL != last)
+	if (NULL != last)
 	{
 		*count -= 1;
 		node *temp = last;
-		if(NULL == last->left)
+		if (NULL == last->left)
 		{
 			first = last = NULL;
 			temp->left = NULL;
@@ -116,6 +120,10 @@ void DeleteEnd(int *count)
 			temp->left = NULL;
 			free(temp);
 		}
+	}
+	else
+	{
+		printf("Underflow.\n");
 	}
 }
 
@@ -137,71 +145,71 @@ void GetEmployeeDetails(Employee *e)
 	getchar();
 	fflush(stdin);
 	printf("Enter SSN : ");
-	fgets(e->ssn,20,stdin);
+	fgets(e->ssn, 20, stdin);
 	printf("Enter Name : ");
-	fgets(e->name,20,stdin);
+	fgets(e->name, 20, stdin);
 	printf("Enter Department : ");
-	fgets(e->dept,20,stdin);
+	fgets(e->dept, 20, stdin);
 	printf("Enter Designation: ");
-	fgets(e->desg,20,stdin);
+	fgets(e->desg, 20, stdin);
 	printf("Enter Salary : ");
-	scanf("%d",&e->sal);
+	scanf("%d", &e->sal);
 	fflush(stdin);
 	getchar();
 	printf("Enter Phone Number : ");
-	fgets(e->phNo,20,stdin); 
+	fgets(e->phNo, 20, stdin);
 }
 
 void PrintEmployeeDetails(Employee e)
 {
 	printf("SSN : ");
-	printf("%s",e.ssn);
+	printf("%s", e.ssn);
 	printf("Name : ");
-	printf("%s",e.name);
+	printf("%s", e.name);
 	printf("Department : ");
-	printf("%s",e.dept);
+	printf("%s", e.dept);
 	printf("Designation: ");
-	printf("%s",e.desg);
-	printf("Salary : %d\n",e.sal);
+	printf("%s", e.desg);
+	printf("Salary : %d\n", e.sal);
 	printf("Enter Phone Number : ");
-	printf("%s",e.phNo); 
+	printf("%s", e.phNo);
 }
 
-void AddEmployees(int n,int *count)
+void AddEmployees(int n, int *count)
 {
 	int i;
-	for(i = 0; i < n;i++)
-	{		
+	for (i = 0; i < n; i++)
+	{
 		Employee e;
 		GetEmployeeDetails(&e);
-		InsertEnd(e,count);		
+		InsertEnd(e, count);
 	}
 }
 
 void DisplayEmployeesRight(int count)
 {
-	printf("Count : %d\n",count);
-	printf("*****************\n"); 
+	printf("Count : %d\n", count);
+	printf("*****************\n");
 	node *temp = first;
-	while(temp != NULL)
+	while (temp != NULL)
 	{
 		PrintEmployeeDetails(temp->e);
 		temp = temp->right;
-        	printf("*****************\n");
+		printf("*****************\n");
 	}
 }
 
 void DisplayEmployeesLeft(int count)
 {
-        printf("Count : %d\n",count);
-        printf("*****************\n");
-        node *temp = last;
-        while(temp != NULL)
-        {
-                PrintEmployeeDetails(temp->e);
-                temp = temp->left;
-        	printf("*****************\n");
-        }
+	printf("Count : %d\n", count);
+	printf("*****************\n");
+	node *temp = last;
+	while (temp != NULL)
+	{
+		PrintEmployeeDetails(temp->e);
+		temp = temp->left;
+		printf("*****************\n");
+	}
 }
 
 int main()
@@ -209,46 +217,46 @@ int main()
 	int n;
 	first = NULL;
 	last = NULL;
-	
+
 	DisplayMenu();
-	int count = 0;		
-	while(1)
+	int count = 0;
+	while (1)
 	{
 		int choice;
 		Employee e;
 		printf("Enter your choice : ");
-		scanf("%d",&choice);
-		
-		switch(choice)
+		scanf("%d", &choice);
+
+		switch (choice)
 		{
-			case 1 :
+			case 1:
 				printf("Enter number of Employees : ");
-				scanf("%d",&n);
-				AddEmployees(n,&count);
+				scanf("%d", &n);
+				AddEmployees(n, &count);
 				break;
-			case 2 :
+			case 2:
 				GetEmployeeDetails(&e);
-				InsertBeg(e,&count);
-				break;		
-			case 3 :		
-				GetEmployeeDetails(&e);
-				InsertEnd(e,&count);
+				InsertBeg(e, &count);
 				break;
-			case 4 :
+			case 3:
+				GetEmployeeDetails(&e);
+				InsertEnd(e, &count);
+				break;
+			case 4:
 				DeleteBeg(&count);
 				break;
-			case 5 :
+			case 5:
 				DeleteEnd(&count);
-				break;		
-			case 6 :
-				printf("\t1. DisplayTowardsRight\n\t2. DisplayTowardsLeft\n\tEnter :");
-				scanf("%d",&n);
-				if(n == 1)
+				break;
+			case 6:
+				printf("\t1. DisplayTowardsRight\n\t2. DisplayTowardsLeft\n\tEnter : ");
+				scanf("%d", &n);
+				if (n == 1)
 				{
 					printf("The Employees are as follows(Left to Right) : \n");
 					DisplayEmployeesRight(count);
 				}
-				else if(n == 2)
+				else if (n == 2)
 				{
 					printf("The Employees are as follows(Right to Left) : \n");
 					DisplayEmployeesLeft(count);
@@ -259,37 +267,37 @@ int main()
 					break;
 				}
 				break;
-			case 7 :
+			case 7:
 				printf("\t1. Enqueue Front\n\t");
-				printf("2. Enqueue Rear\n\t3. Dequeue Front\n\tEnter :");
-				scanf("%d",&n);
-				if(n == 1)
+				printf("2. Enqueue Rear\n\t3. Dequeue Front\n\tEnter : ");
+				scanf("%d", &n);
+				if (n == 1)
 				{
 					GetEmployeeDetails(&e);
-                                	InsertBeg(e,&count);                              
+					InsertBeg(e, &count);
 				}
-				else if(n == 2)
+				else if (n == 2)
 				{
 					GetEmployeeDetails(&e);
-                               		InsertEnd(e,&count);
+					InsertEnd(e, &count);
 				}
-				else if(n == 3)
+				else if (n == 3)
 				{
 					DeleteBeg(&count);
 				}
 				else
 				{
-					printf("Wrong Choice\n");
+					printf("Wrong Choice.\n");
 					break;
 				}
-				break;				
-			case 8 :
+				break;
+			case 8:
 				exit(0);
-			default :
+			default:
 				printf("Wrong choice.\n");
-			break;
-				
-		}	
-		printf("*****************************************************\n");	
+				break;
+
+		}
+		printf("*****************************************************\n");
 	}
 }

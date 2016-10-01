@@ -27,9 +27,9 @@ void Push(int arr[], int *top, int elem)
 void DisplayMenu()
 {
 	printf("1. Push.\n");
-        printf("2. Pop.\n");
+		printf("2. Pop.\n");
 	printf("3. Display Stack.\n");
-        printf("4. Check If Palindrome.\n");
+		printf("4. Check If Palindrome.\n");
 	printf("5.Exit.\n");
 }
 
