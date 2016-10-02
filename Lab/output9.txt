@@ -110,7 +110,7 @@ Enter choice : 6
 	3. Evaluate Polynomial P.
 	4. Clear Polynomials.
 	Enter choice : 1
-Enter Co efficient and Powers of x,y,z : -2 1 1 3
+Enter Co efficient and Powers of x,y,z : -2 1 1 3
 ********************************************************************************
 Enter choice : 6
 	1. Insert To Polynomial P.
@@ -120,7 +120,7 @@ Enter choice : 6
 	Enter choice : 2
 Polynomial P : +(6 x^2 y^2 z^1) +(-4 x^0 y^1 z^5) +(3 x^3 y^1 z^1) +(2 x^1 y^5 z^1) +(-2 x^1 y^1 z^3) 
 ********************************************************************************
-Enter choice : 6
+Enter choice : 6
 	1. Insert To Polynomial P.
 	2. Display Polynomial P.
 	3. Evaluate Polynomial P.

@@ -1,6 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<malloc.h>
+#include<math.h>
 
 struct node
 {
@@ -200,15 +201,31 @@ void Clear(node **t)
 	}
 	*t = NULL;
 }
+
+void Evaluate(node **t, float val[])
+{
+		double result = 0;
+		node **temp = t;
+		do
+		{
+			result += ((*temp)->co)*pow(val[0],(*temp)->exp[0])*pow(val[1],(*temp)->exp[1])*pow(val[2],(*temp)->exp[2]);
+			temp = &((*temp)->next);
+		}while(*temp != *t);
+		printf("P(%f,%f,%f) = %lf\n",val[0],val[1],val[2],result);
+}
+
+
 int main()
 {
-	node *p1 = NULL, *p2 = NULL, *p3 = NULL;
+	node *p1 = NULL, *p2 = NULL, *p3 = NULL, *p = NULL;
 	int choice, co, exp[3];
+	float val[3];
 	printf("1. Insert To Polynomial 1.\n");
 	printf("2. Insert To Polynomial 2.\n");
 	printf("3. Display Polynomials.\n");
 	printf("4. Add Polynomials 1 and 2 to 3.\n");
 	printf("5. Clear Polynomials.\n");
+	printf("6. Polynomial P Evaluation.\n");
 	printf("0. Exit.\n");
 	while (1)
 	{
@@ -259,6 +276,43 @@ int main()
 				Clear(&p3);
 				p1 = p2 = p3 = NULL;
 				printf("Polynomials Reseted.\n");
+				break;
+			case 6:
+				printf("\t1. Insert To Polynomial P.\n");
+				printf("\t2. Display Polynomial P.\n");
+				printf("\t3. Evaluate Polynomial P.\n");
+				printf("\t4. Clear Polynomials.\n");
+				
+				printf("\tEnter choice : ");
+				scanf("%d", &choice);
+
+				switch(choice)
+				{
+					case 1 :
+						printf("Enter Co efficient and Powers of x,y,z : ");
+						scanf("%d %d %d %d", &co, exp, exp + 1, exp + 2);
+						if (!Insert(&p, co, exp))
+						{
+							printf("Element already present.\n");
+						}
+						break;
+					case 2 :
+						printf("Polynomial P : ");
+						Display(&p);
+						break;
+					case 3 :
+						printf("Enter values of x, y, z : ");
+						scanf("%f %f %f", val, val + 1, val + 2);
+						Evaluate(&p, val);
+						break;
+					case 4 :
+						Clear(&p);
+						p = NULL;
+						break;
+					default :
+						printf("Wrong choice.\n");
+						break;
+				}
 				break;
 			case 0:
 				exit(1);
