@@ -11,6 +11,61 @@ struct node
 
 typedef struct node node;
 
+
+int FindMin(node *root)
+{
+	while(root->left != NULL)
+	{
+		root = root->left;
+	}
+	return root->val;	
+}
+
+node * Delete(node *root, int val)
+{
+	if(root == NULL)
+	{
+		return root;
+	}
+	else if(val > root->val)
+	{
+		root->right = Delete(root->right, val);
+	}
+	else if(val < root->val)
+	{
+		root->left = Delete(root->left, val);
+	}
+	else
+	{
+		if(root->left == NULL && root->right == NULL)
+		{
+			free(root);
+			root = NULL;
+			return root;
+		}
+		else if(root->left == NULL)
+		{
+			node *temp = root->right;
+			free(root);
+			return temp;
+		}
+		else if(root->right == NULL)
+		{
+			node *temp = root->left;
+			free(root);
+			return temp;
+		}
+		else
+		{
+			int minVal = FindMin(root->right);
+			root->val = minVal;
+			root->right = Delete(root->right,minVal);
+		}
+	}
+}
+
+
+
 node * RecClear(node **root)
 {
 	if (NULL == *root)
@@ -33,7 +88,12 @@ node * RecClear(node **root)
 void RecInsert(node **root, node *new)
 {
 
-	if (new->val >= (*root)->val)
+	if(new->val == (*root)->val)
+	{
+		printf("Duplicates not allowed.\n");
+		return;
+	}
+	else if (new->val > (*root)->val)
 	{
 		if ((*root)->right == NULL)
 		{
@@ -145,6 +205,7 @@ int main()
 	printf("3. Preorder Display.\n");
 	printf("4. Postorder Display.\n");
 	printf("5. Binary Search.\n");
+	printf("6. Delete a Node.\n");
 	printf("0. Exit.\n");
 
 	while (1)
@@ -190,6 +251,21 @@ int main()
 				else
 				{
 					printf("Element NOT FOUND.\n");
+				}
+				break;
+			
+			case 6:
+				printf("Enter an element to delete : ");
+				scanf("%d", &elem);
+				i = Search(&root, elem);
+				root = Delete(root,elem);
+				if(i)
+				{
+					printf("%d Deleted from BST.\n", elem);
+				}
+				else
+				{
+					printf("%d Not Present in BST.\n", elem);
 				}
 				break;
 			case 0:
