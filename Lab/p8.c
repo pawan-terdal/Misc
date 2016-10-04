@@ -171,7 +171,7 @@ void PrintEmployeeDetails(Employee e)
 	printf("Designation: ");
 	printf("%s", e.desg);
 	printf("Salary : %d\n", e.sal);
-	printf("Enter Phone Number : ");
+	printf("Phone Number : ");
 	printf("%s", e.phNo);
 }
 

@@ -90,7 +90,7 @@ void RecInsert(node **root, node *new)
 
 	if(new->val == (*root)->val)
 	{
-		printf("Duplicates not allowed.\n");
+		printf("%d already Present. Duplicates not allowed.\n", new->val);
 		return;
 	}
 	else if (new->val > (*root)->val)
