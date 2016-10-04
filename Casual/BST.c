@@ -165,7 +165,7 @@ void InOrder(node **root)
 		return;
 	}
 	InOrder(&((*root)->left));
-	printf("%d ", (*root)->val);
+	printf("%d(%p) ", (*root)->val, *root);
 	InOrder(&((*root)->right));
 }
 
@@ -278,3 +278,26 @@ int main()
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
