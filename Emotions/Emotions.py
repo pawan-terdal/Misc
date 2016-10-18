@@ -74,21 +74,42 @@ result = processRequest( json, data, headers, params )
 print(result)
 """
 
-pathToFileInDisk = r'./smiling-photo.jpg'
-with open( pathToFileInDisk, 'rb' ) as f:
-    data = f.read()
+def GetLevels(emotions,num):
+    all = []
+    for i in range(1,num):
+        values = []
+        pathToFileInDisk = './/Images//{}.jpg'.format(i)
+        with open( pathToFileInDisk, 'rb' ) as f:
+            data = f.read()
+        
+        headers = dict()
+        headers['Ocp-Apim-Subscription-Key'] = _key
+        headers['Content-Type'] = 'application/octet-stream'
 
-headers = dict()
-headers['Ocp-Apim-Subscription-Key'] = _key
-headers['Content-Type'] = 'application/octet-stream'
+        json = None
+        params = None
+        result = processRequest( json, data, headers, params )
+        for j in emotions:
+        #for j in result[0]['scores'].keys():
+            values.append(result[0]['scores'][j])
+        all.append(values)
+        print("{} is done...".format(i))
+        #time.sleep(3)
+    
+    return all
 
-json = None
-params = None
-result = processRequest( json, data, headers, params )
-keys = result[0]['scores'].keys()
-markings = list(range(1,9))
-values = [5,4,3,21,41,65,76,56]
-plt.scatter(markings,values)
-plt.xticks(markings,keys)
+print("Enter Emotion and Number Of Photos : ")
+emotions = input().split(' ')
+num = int(input().strip())
+y = np.array(GetLevels(emotions,num+1))
+x = list(range(1,len(y)+1))
+
+for i in range(len(y[0])):
+    plt.plot(x,y[:,i])
+
+plt.xlabel('Time')
+plt.ylabel('Degree')
+plt.title('Emotions Graph')
+plt.legend(emotions,loc=1)
 
 plt.show()
