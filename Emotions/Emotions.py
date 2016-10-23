@@ -74,21 +74,20 @@ result = processRequest( json, data, headers, params )
 print(result)
 """
 
-def GetLevels(emotions,num):
+def GetLevels(emotions, num):
     all = []
-    for i in range(1,num):
+    for i in range(1, num):
         values = []
         pathToFileInDisk = './/Images//{}.jpg'.format(i)
-        with open( pathToFileInDisk, 'rb' ) as f:
+        with open(pathToFileInDisk, 'rb') as f:
             data = f.read()
-        
         headers = dict()
         headers['Ocp-Apim-Subscription-Key'] = _key
         headers['Content-Type'] = 'application/octet-stream'
 
         json = None
         params = None
-        result = processRequest( json, data, headers, params )
+        result = processRequest(json, data, headers, params)
         for j in emotions:
         #for j in result[0]['scores'].keys():
             values.append(result[0]['scores'][j])
@@ -101,15 +100,13 @@ def GetLevels(emotions,num):
 print("Enter Emotion and Number Of Photos : ")
 emotions = input().split(' ')
 num = int(input().strip())
-y = np.array(GetLevels(emotions,num+1))
-x = list(range(1,len(y)+1))
+y = np.array(GetLevels(emotions, num+1))
+x = list(range(1, len(y)+1))
 
 for i in range(len(y[0])):
-    plt.plot(x,y[:,i])
-
+    plt.plot(x, y[:, i])
 plt.xlabel('Time')
 plt.ylabel('Degree')
 plt.title('Emotions Graph')
-plt.legend(emotions,loc=1)
-
+plt.legend(emotions, loc=1)
 plt.show()
