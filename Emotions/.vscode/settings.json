@@ -1,4 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "python.pythonPath": "python3"
+    "python.pythonPath": "/home/nithin/ProgramFiles/anaconda3/bin/python",
+    "python.linting.enabled": false,
+    "python.linting.pylintEnabled": false
 }

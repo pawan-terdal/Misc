@@ -29,7 +29,7 @@ node * Lol(node *first)
 int main()
 {
 	node *first = NULL;
-	first = Lol(first);
+	Lol(first);
 	printf("%p\n", first);
 	Lol(first);
 	printf("%p\n",first->next);

@@ -21,7 +21,6 @@ def processRequest( json, data, headers, params ):
     data: Used when processing image read from disk. See API Documentation
     headers: Used to pass the key information and the data type request
     """
-
     retries = 0
     result = None
 
