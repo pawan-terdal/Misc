@@ -37,6 +37,8 @@ int GetPreference(char ch)
 			return 2;
 		case '(' :
 			return 1;
+		default :
+			return 0;
 	}
 }
 
@@ -78,9 +80,10 @@ void ConvertToPostfix(char infix[],char postfix[])
 		}
 		else
 		{
+			
 			pres = GetPreference(ch);
 			prev = GetPreference(stack[top]);
-			
+			printf("%d\n",prev);
 			while(!(pres>prev))
 			{
 				postfix[j] = Pop(stack,&top);
