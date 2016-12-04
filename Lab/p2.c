@@ -35,10 +35,12 @@ int TryReplace(char STR[],char PAT[],char REP[],char ANS[])
 				c++;
 			}
 		}
-		
-		ANS[d] = STR[a];
-		d++;
-		a++;
+		else
+		{
+			ANS[d] = STR[a];
+			d++;
+			a++;
+		}
 	}
 	
 	ANS[d] = '\0';
