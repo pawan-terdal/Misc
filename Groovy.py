@@ -4,34 +4,53 @@ import requests
 import urllib.parse
 import json
 import pprint
-
 import requests
-clientid = 'rednithin'
-clientsecret = 'GitUOgchj++wiZuYx8rEuOorkB4gu5Keij5BaKyMafk='
-serviceauth = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13"
-serviceapi = "https://music.xboxlive.com/1/content"
-scope = "http://music.xboxlive.com"
-grantType = "client_credentials"
+import copy
 
+class Track:
+	def __init__(self):
+		self.TrackName = ""
+		self.Albumname = ""
+		self.ImageUrl = ""
+		self.Artists = []
+		self.Genres = []
+		self.Subgenres = []
+		self.TrackNumber = 0
+		self.Year = 0
 
-print('Enter a music term : ', end='')
-inp = input()
+class Groove:
+	clientid = 'rednithin'
+	clientsecret = 'GitUOgchj++wiZuYx8rEuOorkB4gu5Keij5BaKyMafk='
+	serviceauth = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13"
+	serviceapi = "https://music.xboxlive.com/1/content"
+	scope = "http://music.xboxlive.com"
+	grantType = "client_credentials"
+	
+	def Search(self, key):
+		requestData = {}
+		requestData["client_id"] = self.clientid
+		requestData["client_secret"] = self.clientsecret
+		requestData["scope"] = self.scope
+		requestData["grant_type"] = self.grantType
 
-requestData = {}
-requestData["client_id"] = clientid
-requestData["client_secret"] = clientsecret
-requestData["scope"] = scope
-requestData["grant_type"] = grantType
+		response = requests.post(self.serviceauth, data=requestData)
+		accessToken = response.json()['access_token']
+		myurl = self.serviceapi + '/music/search?q=' + urllib.parse.quote_plus(key) + '&maxItems=24&filters=Tracks' +'&accessToken=Bearer+' + urllib.parse.quote_plus(accessToken)
+		contentResponse = requests.get(myurl)
 
+		contentJson = contentResponse.json()
 
-t = requests.post(serviceauth, data=requestData)
-accessToken = t.json()['access_token']
-myurl = serviceapi + '/music/search?q=' + urllib.parse.quote_plus(inp) + '&accessToken=Bearer+' + urllib.parse.quote_plus(accessToken)
-x = requests.get(myurl)
-
-d = x.json()
-
-pprint.pprint(d['Tracks']['Items'][0]['Name'])
-
-for track in d['Tracks']['Items']:
-	print(track['Artists'][0]['Artist']['ImageUrl'])
+		tracks = []
+		for item in contentJson['Tracks']['Items']:
+			track = Track()
+			track.TrackName = item['Name']
+			track.Albumname = item['Album']['Name']
+			track.ImageUrl = item['Album']['ImageUrl']
+			for artist in item['Artists']:
+				track.Artists.append(artist['Artist']['Name'])
+			track.Genres = copy.deepcopy(item['Genres'])
+			track.Subgenres = copy.deepcopy(item['Subgenres'])
+			track.TrackNumber = int(item['TrackNumber'])
+			track.Year = int(item['ReleaseDate'][0:4])
+			tracks.append(copy.deepcopy(track))
+		return tracks

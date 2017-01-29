@@ -13,7 +13,7 @@ class MyApp(App):
         f.add_widget(s)
         s.add_widget(l)
         return f
-
+        
 
 if __name__ == '__main__':
     MyApp().run()
