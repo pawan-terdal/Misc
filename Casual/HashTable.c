@@ -29,7 +29,7 @@ void Insert(int m, int key, char name[20])
 	Node *n = (Node *)malloc(sizeof(Node));
 	n->key = key;
 	strcpy(n->name, name);
-	
+
 	int index = key % m;
 
 	while(1)
