@@ -25,7 +25,7 @@ class Groove:
 	serviceapi = "https://music.xboxlive.com/1/content"
 	scope = "http://music.xboxlive.com"
 	grantType = "client_credentials"
-	
+
 	def Search(self, key):
 		requestData = {}
 		requestData["client_id"] = self.clientid
