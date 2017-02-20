@@ -3,6 +3,7 @@
 import json
 import pprint
 import pyperclip
+import numpy as np
 
 j = pyperclip.paste()
 
