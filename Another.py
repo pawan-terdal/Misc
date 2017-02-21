@@ -12,7 +12,6 @@ import os
 
 os.chdir('/home/nithin')
 
-
 class myWidget(GridLayout):
     def __init__(self, album, url, **kwargs):
         super(myWidget, self).__init__(**kwargs)
@@ -42,4 +41,4 @@ class MyApp(App):
 
 
 if __name__ == '__main__':
-    MyApp().run() 
+    MyApp().run()
