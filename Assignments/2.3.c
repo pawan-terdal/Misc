@@ -15,7 +15,7 @@ typedef struct node node;
 void InsertEnd(node **first, int value)
 {
 	node *new = (node *)malloc(sizeof(node));
-	
+
 	if(new == NULL)
 	{
 		printf("Memory Allocation Failed.");
@@ -59,7 +59,7 @@ void Display(node **first)
 {
 	if(NULL == *first)
 	{
-		printf("Empty.\n");			
+		printf("Empty.\n");
 	}
 	else
 	{
@@ -70,7 +70,7 @@ void Display(node **first)
 			temp = temp->next;
 		}
 		printf("\n");
-	}	
+	}
 }
 
 node** Reverse(node **first)
@@ -87,24 +87,24 @@ node** Reverse(node **first)
 	node **temp = first;
 	node **ret = Reverse(&((*temp)->next));
 	(*ret)->next = *first;
-	return first; 	
+	return first;
 }
 int main()
 {
 	int choice, value;
 	node *f1 = NULL, **ret;
-	
-	printf("1. Insert End.\n"); 
-	printf("2. Delete Beginning.\n"); 
-	printf("3. Display List.\n"); 
+
+	printf("1. Insert End.\n");
+	printf("2. Delete Beginning.\n");
+	printf("3. Display List.\n");
 	printf("4. Reverse List.\n");
 	printf("5. Exit.\n");
- 
+
 	while(1)
 	{
 		printf("Enter choice : ");
 		scanf("%d", &choice);
-		
+
 		switch(choice)
 		{
 			case 1 :
@@ -141,6 +141,3 @@ int main()
 		printf("--------------------------------\n");
 	}
 }
-
-
-

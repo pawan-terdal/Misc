@@ -4,7 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-Abc	LearningPython/Error.py	/^class Abc(object):$/;"	kind:class	line:9
+Abc	LearningPython/Error.py	/^class Abc(object):$/;"	kind:class	line:10
 Add	LearningPython/Function.py	/^def Add(a,b):$/;"	kind:function	line:4
 AlarmException	Automate mail/Oldmail.py	/^class AlarmException(Exception):$/;"	kind:class	line:7
 AndNeuron	Casual/FirstNeuralNet.py	/^def AndNeuron(x1, x2):$/;"	kind:function	line:2
@@ -38,7 +38,7 @@ GetLevels	Emotions/Emotions.py	/^def GetLevels(emotions, num):$/;"	kind:function
 GraphsDemo.py	LearningPython/GraphsDemo.py	1;"	kind:file	line:1
 GridLayout	Another.py	/^from kivy.uix.gridlayout import GridLayout$/;"	kind:namespace	line:6
 GridLayout	Kivy/ex1.py	/^from kivy.uix.gridlayout import GridLayout$/;"	kind:namespace	line:5
-Groove	Groovy.py	/^class Groove:$/;"	kind:class	line:21
+Groove	Groovy.py	/^class Groove:$/;"	kind:class	line:24
 Groovy.py	Groovy.py	1;"	kind:file	line:1
 GuessGame.py	LearningPython/GuessGame.py	1;"	kind:file	line:1
 HIghestJump.py	Casual/HIghestJump.py	1;"	kind:file	line:1
@@ -75,20 +75,20 @@ QuickSort.py	AlgorithmsCLRS/QuickSort.py	1;"	kind:file	line:1
 Scatter	Kivy/main.py	/^from kivy.uix.scatter import Scatter$/;"	kind:namespace	line:3
 Scope.py	LearningPython/Scope.py	1;"	kind:file	line:1
 ScrollView	Another.py	/^from kivy.uix.scrollview import ScrollView$/;"	kind:namespace	line:7
-Search	Groovy.py	/^	def Search(self, key):$/;"	kind:member	line:29
+Search	Groovy.py	/^    def Search(self, key):$/;"	kind:member	line:32
 SendMail	Automate mail/Mail.py	/^def SendMail():$/;"	kind:function	line:5
 SentimentAnalysis.py	LearningPython/SentimentAnalysis.py	1;"	kind:file	line:1
 TextBlob	LearningPython/SentimentAnalysis.py	/^from textblob import TextBlob$/;"	kind:namespace	line:2
 TextInput	Kivy/ex1.py	/^from kivy.uix.textinput import TextInput$/;"	kind:namespace	line:6
-Track	Groovy.py	/^class Track:$/;"	kind:class	line:10
+Track	Groovy.py	/^class Track:$/;"	kind:class	line:11
 Try.py	LearningPython/Try.py	1;"	kind:file	line:1
 TutorialApp	Casual/HahaPyQt.py	/^class TutorialApp(App):$/;"	kind:class	line:5
 While.py	LearningPython/While.py	1;"	kind:file	line:1
 __init__	Another.py	/^    def __init__(self, **kwargs):$/;"	kind:member	line:31
 __init__	Another.py	/^    def __init__(self, album, url, **kwargs):$/;"	kind:member	line:17
-__init__	Groovy.py	/^	def __init__(self):$/;"	kind:member	line:11
+__init__	Groovy.py	/^    def __init__(self):$/;"	kind:member	line:13
 __init__	Kivy/ex1.py	/^    def __init__(self, **kwargs):$/;"	kind:member	line:11
-__init__	LearningPython/Error.py	/^    def __init__(self, j) :$/;"	kind:member	line:10
+__init__	LearningPython/Error.py	/^    def __init__(self, j) :$/;"	kind:member	line:11
 __name__	LearningPython/Numpy.py	/^def __name__():$/;"	kind:function	line:4
 _key	Emotions/Emotions.py	/^_key = '89a21fa608744bf4b108017cdf20eb62'$/;"	kind:variable	line:10
 _maxNumRetries	Emotions/Emotions.py	/^_maxNumRetries = 10$/;"	kind:variable	line:11
@@ -113,7 +113,7 @@ build	Kivy/ex2.py	/^    def build(self):$/;"	kind:member	line:30
 build	Kivy/ex3.py	/^    def build():$/;"	kind:member	line:21
 build	Kivy/main.py	/^    def build(self):$/;"	kind:member	line:8
 change	LearningPython/Scope.py	/^def change():$/;"	kind:function	line:6
-clientid	Groovy.py	/^	clientid = 'rednithin'$/;"	kind:variable	line:22
+clientid	Groovy.py	/^    clientid     = 'rednithin'$/;"	kind:variable	line:25
 cls	Kivy/ex3.py	/^                            cls=ListItemButton,$/;"	kind:variable	line:14
 consumer_key	LearningPython/SentimentAnalysis.py	/^consumer_key= 'RFCTIkTXT3YzLy0eg0nzjKD8u'$/;"	kind:variable	line:5
 consumer_secret	LearningPython/SentimentAnalysis.py	/^consumer_secret= 'Yka94MBlShOVb5CsPKtcllWfGFEZmfi0YolSR5z8H6cFJLpdCl'$/;"	kind:variable	line:6
@@ -129,7 +129,7 @@ ex2.py	Kivy/ex2.py	1;"	kind:file	line:1
 ex3.py	Kivy/ex3.py	1;"	kind:file	line:1
 f	Automate mail/Mail.py	/^f = open("output.txt",'a')$/;"	kind:variable	line:36
 func	LearningPython/Scope.py	/^def func():$/;"	kind:function	line:3
-grantType	Groovy.py	/^	grantType = "client_credentials"$/;"	kind:variable	line:27
+grantType	Groovy.py	/^    grantType    = "client_credentials"$/;"	kind:variable	line:30
 hello	LearningPython/Function.py	/^def hello():$/;"	kind:function	line:1
 hello	LearningPython/Try.py	/^def hello(num):$/;"	kind:function	line:1
 hello_world	LearningPython/FlaskApp1.py	/^def hello_world():$/;"	kind:function	line:5
@@ -139,7 +139,7 @@ html1	Casual/HIghestJump.py	/^    html1 = urllib.request.urlopen(url1).read()$/;
 html1	Casual/HelpSanath.py	/^    html1 = urllib.request.urlopen(url1).read()$/;"	kind:variable	line:8
 html2	Casual/HIghestJump.py	/^    html2 = urllib.request.urlopen(url2).read()$/;"	kind:variable	line:9
 html2	Casual/HelpSanath.py	/^    html2 = urllib.request.urlopen(url2).read()$/;"	kind:variable	line:9
-j	LearningPython/Error.py	/^j = pyperclip.paste()$/;"	kind:variable	line:7
+j	LearningPython/Error.py	/^j = pyperclip.paste()$/;"	kind:variable	line:8
 json	Groovy.py	/^import json$/;"	kind:namespace	line:5
 json	LearningPython/Error.py	/^import json$/;"	kind:namespace	line:3
 key	LearningPython/SentimentAnalysis.py	/^key = input()$/;"	kind:variable	line:18
@@ -165,6 +165,7 @@ neutral	LearningPython/SentimentAnalysis.py	/^neutral = 0$/;"	kind:variable	line
 nonBlockingRawInput	Automate mail/Oldmail.py	/^def nonBlockingRawInput(prompt='', timeout=5):$/;"	kind:function	line:13
 np	AlgorithmsCLRS/QuickSort.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	Emotions/Emotions.py	/^import numpy as np$/;"	kind:namespace	line:5
+np	LearningPython/Error.py	/^import numpy as np$/;"	kind:namespace	line:6
 np	LearningPython/Gausian.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	LearningPython/GraphsDemo.py	/^import numpy as np$/;"	kind:namespace	line:2
 np	LearningPython/Numpy.py	/^import numpy as np$/;"	kind:namespace	line:1
@@ -179,7 +180,7 @@ os	Another.py	/^import os$/;"	kind:namespace	line:11
 os	Automate mail/Mail.py	/^import os$/;"	kind:namespace	line:2
 os	Automate mail/Oldmail.py	/^import os$/;"	kind:namespace	line:5
 os	Kivy/ex2.py	/^import os$/;"	kind:namespace	line:7
-p	LearningPython/Error.py	/^p = Abc(j)$/;"	kind:variable	line:13
+p	LearningPython/Error.py	/^p = Abc(j)$/;"	kind:variable	line:14
 parse	Groovy.py	/^import urllib.parse$/;"	kind:namespace	line:4
 plt	Emotions/Emotions.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:6
 plt	LearningPython/Gausian.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:3
@@ -204,11 +205,11 @@ requests	Emotions/Emotions.py	/^import requests$/;"	kind:namespace	line:3
 requests	Groovy.py	/^import requests$/;"	kind:namespace	line:3
 requests	Groovy.py	/^import requests$/;"	kind:namespace	line:7
 scipy	LearningPython/GraphsDemo.py	/^import scipy.stats as sp$/;"	kind:namespace	line:1
-scope	Groovy.py	/^	scope = "http:\/\/music.xboxlive.com"$/;"	kind:variable	line:26
+scope	Groovy.py	/^    scope        = "http:\/\/music.xboxlive.com"$/;"	kind:variable	line:29
 selected	Kivy/ex2.py	/^    def selected(self, filename):$/;"	kind:member	line:25
 selection_mode	Kivy/ex3.py	/^                            selection_mode='single',$/;"	kind:variable	line:15
-serviceapi	Groovy.py	/^	serviceapi = "https:\/\/music.xboxlive.com\/1\/content"$/;"	kind:variable	line:25
-serviceauth	Groovy.py	/^	serviceauth = "https:\/\/datamarket.accesscontrol.windows.net\/v2\/OAuth2-13"$/;"	kind:variable	line:24
+serviceapi	Groovy.py	/^    serviceapi   = "https:\/\/music.xboxlive.com\/1\/content"$/;"	kind:variable	line:28
+serviceauth	Groovy.py	/^    serviceauth  = "https:\/\/datamarket.accesscontrol.windows.net\/v2\/OAuth2-13"$/;"	kind:variable	line:27
 signal	Automate mail/Oldmail.py	/^import signal$/;"	kind:namespace	line:3
 smtplib	Automate mail/Mail.py	/^import smtplib$/;"	kind:namespace	line:3
 sp	LearningPython/GraphsDemo.py	/^import scipy.stats as sp$/;"	kind:namespace	line:1

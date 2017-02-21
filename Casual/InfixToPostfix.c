@@ -51,7 +51,7 @@ void ConvertToPostfix(char infix[],char postfix[])
 	{
 		int pres,prev;
 		char ch = infix[i];
-		
+
 		if(isalnum(ch))
 		{
 			postfix[j] = ch;
@@ -64,7 +64,7 @@ void ConvertToPostfix(char infix[],char postfix[])
 				postfix[j] = Pop(stack,&top);
 				j++;
 			}
-		}			
+		}
 		else if(ch == ')')
 		{
 			while(stack[top] != '(')
@@ -80,7 +80,7 @@ void ConvertToPostfix(char infix[],char postfix[])
 		}
 		else
 		{
-			
+
 			pres = GetPreference(ch);
 			prev = GetPreference(stack[top]);
 			printf("%d\n",prev);
@@ -88,13 +88,13 @@ void ConvertToPostfix(char infix[],char postfix[])
 			{
 				postfix[j] = Pop(stack,&top);
 				j++;
-				prev = GetPreference(stack[top]);					
+				prev = GetPreference(stack[top]);
 			}
 			Push(stack,&top,ch);
 		}
 		i++;
 	}
-	postfix[j] = '\0';		
+	postfix[j] = '\0';
 }
 
 int main()
@@ -102,9 +102,9 @@ int main()
 	char infix[MAX],postfix[MAX];
 	printf("Infix : ");
 	fgets(infix,MAX,stdin);
-	
+
 	ConvertToPostfix(infix,postfix);
-	
+
 	printf("Postfix : ");
 	puts(postfix);
-}	
+}

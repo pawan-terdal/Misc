@@ -15,7 +15,7 @@ typedef struct node node;
 void InsertEnd(node **first, int value)
 {
 	node *new = (node *)malloc(sizeof(node));
-	
+
 	if(new == NULL)
 	{
 		printf("Memory Allocation Failed.");
@@ -50,7 +50,7 @@ void DeleteBeg(node **first)
 	{
 		node *temp = *first;
 		*first = (*first)->next;
-		printf("Deleted Value : %d\n", temp->value);	
+		printf("Deleted Value : %d\n", temp->value);
 		free(temp);
 	}
 }
@@ -59,7 +59,7 @@ void Display(node **first)
 {
 	if(NULL == *first)
 	{
-		printf("Empty.\n");			
+		printf("Empty.\n");
 	}
 	else
 	{
@@ -70,7 +70,7 @@ void Display(node **first)
 			temp = temp->next;
 		}
 		printf("\n");
-	}	
+	}
 }
 
 void Join(node **ptr1, node **ptr2)
@@ -80,7 +80,7 @@ void Join(node **ptr1, node **ptr2)
 		if(*ptr1 != NULL)
 		{
 			node *temp = *ptr1;
-			
+
 			while(temp->next != NULL)
 			{
 				temp = temp->next;
@@ -101,30 +101,30 @@ int main()
 {
 	int choice, value;
 	node *f1 = NULL, *f2 = NULL;
-	
-	printf("1. Insert End.\n"); 
-	printf("2. Delete Beginning.\n"); 
-	printf("3. Display Lists.\n"); 
+
+	printf("1. Insert End.\n");
+	printf("2. Delete Beginning.\n");
+	printf("3. Display Lists.\n");
 	printf("4. Join Lists.\n");
 	printf("5. Exit.\n");
- 
+
 	while(1)
 	{
 		printf("Enter choice : ");
 		scanf("%d", &choice);
-		
+
 		switch(choice)
 		{
 			case 1 :
 
 				printf("Enter value : ");
 				scanf("%d",&value);
-				
+
 				printf("\t1. First List.\n");
 				printf("\t2. Second List.\n");
 				printf("\tEnter choice : ");
 				scanf("%d", &choice);
-				
+
 				if(choice == 1)
 				{
 					InsertEnd(&f1,value);
@@ -139,7 +139,7 @@ int main()
 				}
 				break;
 			case 2 :
-				
+
 				printf("\t1. First List.\n");
                 printf("\t2. Second List.\n");
                 printf("\tEnter choice : ");
@@ -178,4 +178,3 @@ int main()
 		printf("--------------------------------\n");
 	}
 }
-

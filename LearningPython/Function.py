@@ -1,14 +1,21 @@
-def hello():
-	print('Howdy')
+"""LOL this is amazing."""
 
-def Add(a,b):
-	print(a+b)
 
-hello()
+def Hello():
+    """Hsadhadha dahdahdadh LOL."""
+    print('Howdy')
+
+
+def Add(a, b):
+    """	LOL	."""
+    print(a + b)
+
+
+Hello()
 print('Lol')
-hello()
+Hello()
 print('Enter a :')
 a = int(input())
 print('Enter b :')
 b = int(input())
-Add(a,b)
+Add(a, b)
