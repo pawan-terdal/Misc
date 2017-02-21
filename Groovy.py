@@ -2,9 +2,6 @@
 
 import requests
 import urllib.parse
-import json
-import pprint
-import requests
 import copy
 
 
@@ -38,8 +35,9 @@ class Groove:
 
         response        = requests.post(self.serviceauth, data=requestData)
         accessToken     = response.json()['access_token']
-        myurl           = self.serviceapi + '/music/search?q=' + urllib.parse.quote_plus(
-            key) + '&maxItems=24&filters=Tracks' + '&accessToken=Bearer+' + urllib.parse.quote_plus(accessToken)
+        myurl           = self.serviceapi + '/music/search?q=' + \
+            urllib.parse.quote_plus(key) + '&maxItems=24&filters=Tracks' + \
+            '&accessToken=Bearer+' + urllib.parse.quote_plus(accessToken)
         contentResponse = requests.get(myurl)
 
         contentJson     = contentResponse.json()
