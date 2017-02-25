@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""The Groovy Backend."""
 
 import requests
 import urllib.parse
@@ -6,8 +7,10 @@ import copy
 
 
 class Track:
+    """This is the class."""
 
     def __init__(self):
+        """The constructor."""
         self.TrackName   = ""
         self.Albumname   = ""
         self.ImageUrl    = ""
@@ -19,6 +22,8 @@ class Track:
 
 
 class Groove:
+    """The Groove Class."""
+
     clientid     = 'rednithin'
     clientsecret = 'GitUOgchj++wiZuYx8rEuOorkB4gu5Keij5BaKyMafk='
     serviceauth  = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13"
@@ -27,6 +32,7 @@ class Groove:
     grantType    = "client_credentials"
 
     def Search(self, key):
+        """The Search Function."""
         requestData                  = {}
         requestData["client_id"]     = self.clientid
         requestData["client_secret"] = self.clientsecret
