@@ -94,6 +94,7 @@ public class Prog1b
 				case 4 :
 				{
 					System.exit(0);
+                    break;
 				}
 				default :
 				{

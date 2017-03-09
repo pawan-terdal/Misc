@@ -3,9 +3,9 @@ import java.io.*;
 
 class Prog6
 {
-	public static float KnapsackGreedy(int weights[], int[] values)
+	public static void KnapsackGreedy(int weights[], int[] values)
 	{
-		int [] valueByWeights = new int[n - 1];
+        
 	}
 	public static int Max(int a, int b)
 	{

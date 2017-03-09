@@ -7,12 +7,12 @@ class Prog5
 	{
 		if(p < r)
 		{
-			int q = (p + r)/2;			
+			int q = (p + r)/2;
 			MergeSort(arr,p,q);
 			MergeSort(arr,q + 1,r);
-			Merge(arr,p,q,r);			
+			Merge(arr,p,q,r);
 		}
-		
+
 	}
 
 	public static void Merge(int [] arr, int p, int q, int r)
@@ -39,7 +39,7 @@ class Prog5
 		for(int i = 0; i < n; i++)
 		{
 			if(arr1[j] < arr2[k])
-			{                    
+			{
 				arr[p + i] = arr1[j++];
 			}
 			else
@@ -55,7 +55,7 @@ class Prog5
 		{
 			Random r = new Random();
 			r.setSeed(3);
-			arr[i] = (int)(r.nextInt(arr.length * 5));
+			arr[i] = r.nextInt(arr.length * 5);
 		}
 	}
 	public static void Display(int[] arr)
@@ -65,7 +65,7 @@ class Prog5
 			System.out.println(arr[i]);
 		}
 	}
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter number of elements : ");
@@ -78,5 +78,5 @@ class Prog5
         double elapsedTime = stopTime - startTime;
       	System.out.println("Elapsed Time : " + elapsedTime);
       	//Display(arr);
-	}	
+	}
 }

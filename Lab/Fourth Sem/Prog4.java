@@ -14,11 +14,11 @@ class Prog4
 	{
 		if(p < r)
 		{
-			int pivot = QuickPivot(arr,p,r);			
+			int pivot = QuickPivot(arr,p,r);
 			QuickSort(arr, p, pivot-1);
-			QuickSort(arr, pivot+1, r);			
+			QuickSort(arr, pivot+1, r);
 		}
-		
+
 	}
 
 	public static int QuickPivot(int [] arr, int p, int r)
@@ -35,14 +35,14 @@ class Prog4
 		Swap(arr, pivot, r);
 		return pivot;
 	}
-	
+
 	public static void Populate(int[] arr)
 	{
 		Random r = new Random();
 		r.setSeed(3);
 		for(int i = 0; i < arr.length; i++)
 		{
-			arr[i] = (int)(r.nextInt()*arr.length);
+			arr[i] = r.nextInt(arr.length);
 		}
 	}
 	public static void Display(int[] arr)
@@ -52,7 +52,7 @@ class Prog4
 			System.out.println(arr[i]);
 		}
 	}
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter number of elements : ");
@@ -65,5 +65,5 @@ class Prog4
         double elapsedTime = stopTime - startTime;
       	System.out.println("Elapsed Time : " + elapsedTime);
 		//Display(arr);
-	}	
+	}
 }

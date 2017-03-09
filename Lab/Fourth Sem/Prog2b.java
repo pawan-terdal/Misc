@@ -28,7 +28,7 @@ class Customer
 
 class Prog2b
 {
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		String name, dob, input;
 		int count = 0;
@@ -44,7 +44,7 @@ class Prog2b
 			System.out.print("Enter choice : ");
 			choice = in.nextInt();
 			in.nextLine();
-			switch (choice) 
+			switch (choice)
 			{
 				case 1 :
 				{
@@ -77,12 +77,13 @@ class Prog2b
 				case 3 :
 				{
 					System.exit(0);
+                    break;
 				}
 				default :
 				{
 					System.out.println("Wrong choice. Try again.");
 				}
 			}
-		}		
+		}
 	}
 }

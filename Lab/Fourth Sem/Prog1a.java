@@ -7,7 +7,7 @@ public class Prog1a
 	public String Usn;
 	public String Branch;
 	public String Phone;
-	
+
 	Prog1a(String name , String usn , String branch , String phone )
 	{
 		this.Name = name;
@@ -15,7 +15,7 @@ public class Prog1a
 		this.Branch = branch;
 		this.Phone = phone;
 	}
-	
+
 	public void Display(int index)
 	{
 		System.out.println("\nStudent " + index  + " : ");
@@ -99,6 +99,7 @@ public class Prog1a
 				case 3 :
 				{
 					System.exit(0);
+                    break;
 				}
 				default :
 				{
@@ -106,5 +107,5 @@ public class Prog1a
 				}
 			}
 		}
-	} 
+	}
 }
