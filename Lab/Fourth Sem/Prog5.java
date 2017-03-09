@@ -12,7 +12,6 @@ class Prog5
 			MergeSort(arr,q + 1,r);
 			Merge(arr,p,q,r);
 		}
-
 	}
 
 	public static void Merge(int [] arr, int p, int q, int r)
@@ -67,16 +66,20 @@ class Prog5
 	}
 	public static void main(String[] args)
 	{
+        int t;
 		Scanner in = new Scanner(System.in);
-		System.out.println("Enter number of elements : ");
-		int num = in.nextInt();
-		int [] arr = new int[num];
-		Populate(arr);
-		double startTime = System.currentTimeMillis();
-		MergeSort(arr, 0 , arr.length - 1);
-		double stopTime = System.currentTimeMillis();
-        double elapsedTime = stopTime - startTime;
-      	System.out.println("Elapsed Time : " + elapsedTime);
-      	//Display(arr);
+        System.out.println("Enter number of testcases : ");
+        t = in.nextInt();
+        int num = 5000;
+        for(int i = 0; i < t; i++, t+= 10000)
+        {
+            int [] arr = new int[num];
+		    Populate(arr);
+		    double startTime = System.currentTimeMillis();
+		    MergeSort(arr, 0 , arr.length - 1);
+		    double stopTime = System.currentTimeMillis();
+            double elapsedTime = stopTime - startTime;
+      	    System.out.println("Elapsed Time : " + elapsedTime);
+        }
 	}
 }

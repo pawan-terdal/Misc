@@ -42,7 +42,7 @@ class Prog4
 		r.setSeed(3);
 		for(int i = 0; i < arr.length; i++)
 		{
-			arr[i] = r.nextInt(arr.length);
+			arr[i] = r.nextInt(arr.length * 5);
 		}
 	}
 	public static void Display(int[] arr)
