@@ -1,14 +1,14 @@
 import java.io.*;
 import java.util.*;
 
-public class Prog1a
+class Student
 {
 	public String Name;
 	public String Usn;
 	public String Branch;
 	public String Phone;
 
-	Prog1a(String name , String usn , String branch , String phone )
+	Student(String name , String usn , String branch , String phone )
 	{
 		this.Name = name;
 		this.Usn = usn;
@@ -23,8 +23,11 @@ public class Prog1a
 		System.out.println("Branch \t: " + Branch);
 		System.out.println("Phone \t: " + Phone);
 	}
+}
 
-	public static void DisplayList(ArrayList<Prog1a> students)
+public class Prog1a
+{
+	public static void DisplayList(ArrayList<Student> students)
 	{
 		System.out.println("Student Details : ");
 		for (int i = 0; i < students.size(); i++ )
@@ -34,7 +37,7 @@ public class Prog1a
 		}
 	}
 
-	public static ArrayList<Prog1a> InputList()
+	public static ArrayList<Student> InputList()
 	{
 		String name,usn,branch,phone;
 		int number;
@@ -42,7 +45,7 @@ public class Prog1a
 		System.out.print("Enter number of students : ");
 		number = in.nextInt();
 		in.nextLine();
-		ArrayList<Prog1a> students = new ArrayList<Prog1a>();
+		ArrayList<Student> students = new ArrayList<Student>();
 		System.out.println("Enter Details of " + number + " Students : ");
 		for(int i = 0; i < number; i++)
 		{
@@ -55,7 +58,7 @@ public class Prog1a
 			branch = in.nextLine();
 			System.out.print("Phone  : ");
 			phone = in.nextLine();
-			Prog1a student = new Prog1a(name, usn, branch, phone);
+			Student student = new Student(name, usn, branch, phone);
 			students.add(student);
 		}
 
@@ -70,7 +73,7 @@ public class Prog1a
 		System.out.println("1. Enter new Student Records.");
 		System.out.println("2. Display Student Records.");
 		System.out.println("3. Exit.");
-		ArrayList<Prog1a> students = null;
+		ArrayList<Student> students = null;
 
 		int choice = 0;
 		while(true)
