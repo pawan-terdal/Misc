@@ -22,7 +22,7 @@ class Customer
 
 	public void Display()
 	{
-		System.out.println(Name + ',' + Date + ',' + Month + ',' + Year);
+		System.out.println(Name + ", "  + Date + ", " + Month + ", " + Year);
 	}
 }
 

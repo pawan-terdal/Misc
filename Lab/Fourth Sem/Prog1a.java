@@ -18,7 +18,6 @@ public class Prog1a
 
 	public void Display(int index)
 	{
-		System.out.println("\nStudent " + index  + " : ");
 		System.out.println("Name \t: " + Name);
 		System.out.println("USN \t: " + Usn);
 		System.out.println("Branch \t: " + Branch);
@@ -30,7 +29,7 @@ public class Prog1a
 		System.out.println("Student Details : ");
 		for (int i = 0; i < students.size(); i++ )
 		{
-			System.out.println("Student " + (i+1) + " Details : ");
+			System.out.println("\nStudent " + (i+1) + " Details : ");
 			students.get(i).Display(i);
 		}
 	}

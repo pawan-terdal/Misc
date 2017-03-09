@@ -72,7 +72,7 @@ public class Prog1b
 			{
 				case 1 :
 				{
-					System.out.println("Enter a number to push : ");
+					System.out.print("Enter a number to push : ");
 					number = in.nextInt();
 					stack.Push(number);
 					break;

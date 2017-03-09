@@ -15,10 +15,10 @@ class FindRandomThread implements Runnable
 		{
 			Number.number = (int)(Math.random() * 10);
 			System.out.print("Number[Thread1] : " + Number.number);
-			try 
+			try
 			{
 			    Thread.sleep(1000);
-			} 
+			}
 			catch(InterruptedException e)
 			{
 			     // this part is executed when an exception (in this example InterruptedException) occurs
@@ -34,10 +34,10 @@ class SquareThread implements Runnable
  		for(int i = 0; i < Number.iterations; i++)
 		{
   			System.out.print("\tSquare[Thread2] : " + Number.number * Number.number);
-  			try 
+  			try
 			{
 			    Thread.sleep(1050);
-			} 
+			}
 			catch(InterruptedException e)
 			{
 			     // this part is executed when an exception (in this example InterruptedException) occurs
@@ -53,10 +53,10 @@ class CubeThread implements Runnable
  		for(int i = 0; i < Number.iterations; i++)
 		{
   			System.out.println("\tCube[Thread3] : " + Number.number * Number.number * Number.number);
-  			try 
+  			try
 			{
 			    Thread.sleep(1050);
-			} 
+			}
 			catch(InterruptedException e)
 			{
 			     // this part is executed when an exception (in this example InterruptedException) occurs
@@ -67,9 +67,9 @@ class CubeThread implements Runnable
 
 class Prog3b
 {
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
-		System.out.println("Enter number of iterations : ");
+		System.out.print("Enter number of iterations : ");
 		Scanner in = new Scanner(System.in);
 		Number.iterations = in.nextInt();
 		Thread [] threads = new Thread[3];
@@ -80,5 +80,5 @@ class Prog3b
 		{
 			threads[i].start();
 		}
-	}	
+	}
 }

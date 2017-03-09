@@ -1,0 +1,8 @@
+[nithin@nithin-pc Fourth Sem]$ java Prog3b
+Enter number of iterations : 5
+Number[Thread1] : 4     Square[Thread2] : 16    Cube[Thread3] : 64
+Number[Thread1] : 6     Square[Thread2] : 36    Cube[Thread3] : 216
+Number[Thread1] : 9     Square[Thread2] : 81    Cube[Thread3] : 729
+Number[Thread1] : 5     Square[Thread2] : 25    Cube[Thread3] : 125
+Number[Thread1] : 9     Square[Thread2] : 81    Cube[Thread3] : 729
+[nithin@nithin-pc Fourth Sem]$ 

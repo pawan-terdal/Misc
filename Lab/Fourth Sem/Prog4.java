@@ -36,6 +36,16 @@ class Prog4
 		return pivot;
 	}
 
+	public static void IsSorted(int [] arr)
+	{
+		for(int i = 0; i < arr.length - 1; i++)
+		{
+			if(arr[i] > arr[i+1])
+			{
+				throw new RuntimeException("Not Sorted.");
+			}
+		}
+	}
 	public static void Populate(int[] arr)
 	{
 		Random r = new Random();
@@ -54,16 +64,23 @@ class Prog4
 	}
 	public static void main(String[] args)
 	{
+		int t;
 		Scanner in = new Scanner(System.in);
-		System.out.println("Enter number of elements : ");
-		int num = in.nextInt();
-		int [] arr = new int[num];
-		Populate(arr);
-		double startTime = System.currentTimeMillis();
-		QuickSort(arr, 0 , arr.length - 1);
-		double stopTime = System.currentTimeMillis();
-        double elapsedTime = stopTime - startTime;
-      	System.out.println("Elapsed Time : " + elapsedTime);
-		//Display(arr);
+        System.out.print("Enter number of testcases : ");
+        t = in.nextInt();
+        int num = 5000;
+		System.out.println("Length\t\t\tTime(milliseconds)");
+        for(int i = 0; i < t; i++, num+= 20000)
+        {
+            int [] arr = new int[num];
+		    Populate(arr);
+			//System.out.println(arr[0]);
+		    double startTime = System.currentTimeMillis();
+		    QuickSort(arr, 0 , arr.length - 1);
+		    double stopTime = System.currentTimeMillis();
+            double elapsedTime = stopTime - startTime;
+			IsSorted(arr);
+      	    System.out.println( num + "\t\t\t" + elapsedTime);
+        }
 	}
 }

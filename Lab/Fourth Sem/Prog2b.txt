@@ -1,0 +1,19 @@
+[nithin@nithin-pc Fourth Sem]$ java Prog2b
+1. Enter Customers' Details.
+2. Display After Modification.
+3. Exit.
+Enter choice : 1
+Enter number of customers : 3
+Enter Customer 1 Name And DOB in the format <name,dd/mm/yy> :
+Nithin, 12/11/1996
+Enter Customer 2 Name And DOB in the format <name,dd/mm/yy> :
+Reddy, 13/12/1996
+Enter Customer 3 Name And DOB in the format <name,dd/mm/yy> :
+Ankush, 14/11/1997
+Enter choice : 2
+Customer Details : 
+Nithin, 12, 11, 1996
+Reddy, 13, 12, 1996
+Ankush, 14, 11, 1997
+Enter choice : 3
+[nithin@nithin-pc Fourth Sem]$ 
