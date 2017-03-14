@@ -4,7 +4,7 @@ import java.util.*;
 class Student
 {
 	public String Name;
-	public String Usn;
+	public String Usn; 
 	public String Branch;
 	public String Phone;
 
