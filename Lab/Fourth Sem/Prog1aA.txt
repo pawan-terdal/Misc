@@ -1,0 +1,36 @@
+"""Psuedo Code"""
+
+
+Step 1: Start
+
+
+Step 2 : Create Student Class.
+class Student
+{
+    public :
+    String Usn, Name, Branch, Phone;
+    Student(name, usn, branch, phone);
+    void Display();
+}
+
+void Student::Display()
+    1. Display Details.
+
+
+Step 3 : Input number of students and create a list.
+Read(n);
+Student students[] = new Students[n];
+
+
+Step 4 : Input the students.
+for i = 0 to n - 1 do :
+    Read name, usn, branch, phone;
+    students[i] = new Student(name, usn, branch, phone);
+
+    
+Step 5 : Display the Students
+for i = 0 to n - 1 do :
+    students[i].Display();
+
+    
+Step 6 : Exit.

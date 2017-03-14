@@ -16,7 +16,7 @@ class Student
 		this.Phone = phone;
 	}
 
-	public void Display(int index)
+	public void Display()
 	{
 		System.out.println("Name \t: " + Name);
 		System.out.println("USN \t: " + Usn);
@@ -33,7 +33,7 @@ public class Prog1a
 		for (int i = 0; i < students.size(); i++ )
 		{
 			System.out.println("\nStudent " + (i+1) + " Details : ");
-			students.get(i).Display(i);
+			students.get(i).Display();
 		}
 	}
 

@@ -54,7 +54,7 @@ class Prog2b
 
 					for(int i = 0; i < count; i++)
 					{
-						System.out.println("Enter Customer " + (i+1) +" Name And DOB in the format <name,dd/mm/yy> :");
+						System.out.println("Enter Customer " + (i+1) +" Name And DOB in the format <name,dd/mm/yyyy> :");
 						input = in.nextLine();
 						customers[i] = new Customer(input);
 					}
