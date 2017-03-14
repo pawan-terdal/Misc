@@ -6,7 +6,7 @@ class Student
 	public String Name;
 	public String Usn;
 	public String Branch;
-	public String Phone; 
+	public String Phone;
 
 	Student(String name , String usn , String branch , String phone )
 	{
@@ -15,7 +15,6 @@ class Student
 		this.Branch = branch;
 		this.Phone = phone;
 	}
-
 	public void Display()
 	{
 		System.out.println("Name \t: " + Name);
