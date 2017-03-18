@@ -1,0 +1,6 @@
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SummingTheNSeries\bin\Debug\SummingTheNSeries.exe.config
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SummingTheNSeries\bin\Debug\SummingTheNSeries.exe
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SummingTheNSeries\bin\Debug\SummingTheNSeries.pdb
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SummingTheNSeries\obj\Debug\SummingTheNSeries.csprojResolveAssemblyReference.cache
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SummingTheNSeries\obj\Debug\SummingTheNSeries.exe
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SummingTheNSeries\obj\Debug\SummingTheNSeries.pdb

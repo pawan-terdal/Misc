@@ -1,0 +1,5 @@
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\HandShakes\bin\Debug\HandShakes.exe.config
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\HandShakes\bin\Debug\HandShakes.exe
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\HandShakes\bin\Debug\HandShakes.pdb
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\HandShakes\obj\Debug\HandShakes.exe
+C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\HandShakes\obj\Debug\HandShakes.pdb

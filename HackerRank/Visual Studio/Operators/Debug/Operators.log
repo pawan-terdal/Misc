@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\reddy\onedrive\programs\hackerrank visual studio\operators\source.cpp(10): error C4700: uninitialized local variable 'b' used
+c:\users\reddy\onedrive\programs\hackerrank visual studio\operators\source.cpp(10): error C4700: uninitialized local variable 'a' used
+c:\users\reddy\onedrive\programs\hackerrank visual studio\operators\source.cpp(10): error C4700: uninitialized local variable 'c' used
