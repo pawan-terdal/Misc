@@ -1,2 +1,2 @@
 # LinuxPrograms
-This is where I'll store my Algorithms.
+ This is where I'll store my Algorithms.
