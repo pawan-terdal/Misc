@@ -18,6 +18,6 @@ class temp1 implements hello
 
     public void lol(int a)
     {
-
+        
     }
 }
