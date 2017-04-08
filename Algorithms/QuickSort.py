@@ -9,7 +9,7 @@ def Partition(arr, start, end):
             arr[pIndex] = arr[i]
             arr[i] = temp
             pIndex += 1
-    
+
     temp = arr[pIndex]
     arr[pIndex] = arr[pivot]
     arr[pivot] = temp

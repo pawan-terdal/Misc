@@ -1,0 +1,371 @@
+1 Ans.
+;Program to compute LCM
+.model small
+.data
+    num1 dw 0006h
+    num2 dw 0009h
+    lcm dw ?
+    gcd dw ?
+.code
+main proc
+    mov ax,@data
+    mov ds,ax
+    mov ax,num1
+    mov bx,num2
+myloop:             ;First we compute GCD using Euclid's algorithm.
+    mov dx,0000h
+    mov cx,bx
+    div bx
+    mov bx,dx
+    mov ax,cx
+    cmp bx,0000h
+    jne myloop
+    mov gcd,ax
+    mov cx,ax
+    mov ax,num1
+    mov bx,num2
+    mul bx
+    div cx
+    mov lcm,ax      ;We find LCM by "LCM = NUM1 * NUM2 / GCD"
+    mov ah,4ch
+    int 21h
+main endp
+    end main
+
+
+
+
+
+2 Ans.
+;Program to compute GCD using Euclid's algorithm.
+.model small
+.data
+    num1 dw 0006h
+    num2 dw 0009h
+    gcd dw ?
+.code
+main proc
+    mov ax,@data
+    mov ds,ax
+    mov ax,num1
+    mov bx,num2
+myloop:             ;Computing GCD using GCD(a,b) = GCD(b,a%b) when a%b = 0 => a is GCD.
+    mov dx,0000h
+    mov cx,bx
+    div bx
+    mov bx,dx
+    mov ax,cx
+    cmp bx,0000h
+    jne myloop
+    mov gcd,ax
+    mov ah,4ch
+    int 21h
+main endp
+    end main
+
+
+
+
+
+3 Ans.
+;Program to compute factorial
+.model small
+.data
+num dw 0005h
+fact dw ?
+.code
+main proc
+    mov ax,@data    ;Initialize data segment.
+    mov ds,ax
+    mov ax,0001h
+    mov cx,num
+    call factorial
+    mov fact,ax
+    mov ah,4ch
+    int 21h
+main endp
+factorial proc      ;factorial procedure
+    cmp cx,0001h    ;If num = 1 then return.
+    je return
+    mul cx          ;Multiply num to fact.
+    dec cx          ;decrement number.
+    call factorial  ;Recursively call procedure again.
+return:
+    ret
+factorial endp
+    end main
+
+
+
+
+
+4 Ans.
+;Program to separate odd and even numbers
+.model large
+.data
+arr db 12H, 98H, 45H, 83H, 28H, 67H
+len db ($-arr)
+nodd db 00h
+nevn db 00h
+odd db 10 dup(?)
+evn db 10 dup(?)
+.code
+    mov ax,@data
+    mov ds,ax
+    lea bx,arr
+    lea si,odd
+    lea di,evn
+    mov dl,00h
+    mov dh,00h
+    mov cl,len
+    sub ch,ch
+myloop:
+    mov al,[bx]
+    and al,01h
+    cmp al,01h
+    je isodd
+    mov ah,[bx]
+    mov [di],ah
+    inc dh
+    inc di
+    inc bx
+    loop myloop
+    jmp exit
+isodd:
+    mov ah,[bx]
+    mov [si],ah
+    inc dl
+    inc si
+    inc bx
+    loop myloop
+exit:
+    mov nodd,dl
+    mov nevn,dh
+    int 3h
+    mov ah,4ch
+    int 21h
+    end
+
+
+
+
+
+5 Ans.
+;Program to check if Positive or Negative.
+.model small
+.data
+num db 12H
+msg1 db "Positive.$"
+msg2 db "Negative.$"
+.code
+    mov ax,@data
+    mov ds,ax
+    mov al,num
+    shl al,01h
+    jc isnegative
+    lea dx,msg1
+    mov ah,09h
+    int 21h
+    jmp exit
+isnegative:
+    lea dx,msg2
+    mov ah,09h
+    int 21h
+exit:
+    mov ah,4ch
+    int 21h
+    end
+
+
+
+
+
+6 Ans.
+;Program to check odd or even
+.model small
+.data
+num db 27h
+msg1 db "Even.$"
+msg2 db "Odd.$"
+.code
+    mov ax,@data
+    mov ds,ax
+    mov al,num
+    and al,01h
+    cmp al,01h
+    je isodd
+    lea dx,msg1
+    mov ah,09h
+    int 21h
+    jmp exit
+isodd:
+    lea dx,msg2
+    mov ah,09h
+    int 21h
+exit:
+    mov ah,4ch
+    int 21h
+    end
+
+
+
+
+
+7 Ans.
+;Program to check odd or even
+.model small
+.data
+num db 0AAh
+none db 00h
+nzero db 00h
+.code
+    mov ax,@data
+    mov ds,ax
+    mov al,num
+    mov cx,08h
+    mov dl,00h ;Number of ones
+myloop:
+    mov ah,al
+    shr al,01h
+    and ah,01h
+    cmp ah,01h
+    jz isone
+    loop myloop
+isone:
+    inc dl
+    loop myloop
+exit:
+    mov none,dl
+    mov dh,08h
+    sub dh,dl
+    mov nzero,dh
+    int 3h
+    mov ah,4ch
+    int 21h
+    end
+
+
+
+
+
+8 Ans.
+;Search character in string.
+.model small
+.data
+str db "PESIT SOUTH CAMPUS$"
+len dw ($-str)
+pos dw 0FFFFh
+chr db 'S'
+msg1 db "Character found.$"
+msg2 db "Character not found.$"
+.code
+    mov ax,@data
+    mov ds,ax
+    mov cx,len
+    mov ah,chr
+    mov si,00h
+myloop:
+    mov al,str[si]
+    cmp ah,al
+    jz found
+    inc si
+    loop myloop
+    lea dx,msg2
+    mov ah,09h
+    int 21h
+    jmp exit
+found:
+    mov pos,si
+    lea dx,msg1
+    mov ah,09h
+    int 21h
+exit:
+    mov ah,4ch
+    int 21h
+    end
+
+
+
+
+
+9 Ans.
+;Count number of occurances.
+.model small
+.data
+str db "exercise$"
+len dw ($-str)
+chr db 'e'
+answer dw 0000h
+.code
+    mov ax,@data
+    mov ds,ax
+    lea si,str
+    mov cx,len
+    mov ah,chr
+    mov dx,0000h
+myloop:
+    mov al,[si]
+    inc si
+    cmp al,ah
+    jz found
+    loop myloop
+    jmp exit
+found:
+    inc dx
+    loop myloop
+exit:
+    mov answer,dx
+    mov ah,4ch
+    int 21h
+    end
+
+
+
+
+
+10 Ans.
+;Program to insert charcter 'c' in miroproessor.
+.model small
+.data
+str db "miroproessor$$$$"
+org 20h
+len dw ($-str)
+chr db 'c'
+.code
+main proc
+    mov ax,@data
+    mov ds,ax
+    mov bx,03h
+    call insert
+    mov bx,09h
+    call insert
+    lea dx,str
+    mov ah,09h
+    int 21h
+    mov ah,4ch
+    int 21h
+main endp
+insert proc
+    lea si,str
+    mov dl,chr
+    mov cx,len
+    add si,cx
+    inc cx
+    mov len,cx
+    sub cx,bx
+myloop:
+    mov di,si
+    dec di
+    mov ax,[di]
+    mov [si],ax
+    dec si
+    loop myloop
+    mov [si],dl
+    ret
+insert endp
+    end main
+
+
+
+
+
