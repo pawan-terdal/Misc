@@ -1,6 +1,0 @@
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\Dancing in Pairs\bin\Debug\Dancing in Pairs.exe.config
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\Dancing in Pairs\bin\Debug\Dancing in Pairs.exe
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\Dancing in Pairs\bin\Debug\Dancing in Pairs.pdb
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\Dancing in Pairs\obj\Debug\Dancing in Pairs.csprojResolveAssemblyReference.cache
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\Dancing in Pairs\obj\Debug\Dancing in Pairs.exe
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\Dancing in Pairs\obj\Debug\Dancing in Pairs.pdb

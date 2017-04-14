@@ -1,6 +1,0 @@
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\RedJohnIsBackCS\bin\Debug\RedJohnIsBackCS.exe.config
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\RedJohnIsBackCS\bin\Debug\RedJohnIsBackCS.exe
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\RedJohnIsBackCS\bin\Debug\RedJohnIsBackCS.pdb
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\RedJohnIsBackCS\obj\Debug\RedJohnIsBackCS.csprojResolveAssemblyReference.cache
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\RedJohnIsBackCS\obj\Debug\RedJohnIsBackCS.exe
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\RedJohnIsBackCS\obj\Debug\RedJohnIsBackCS.pdb

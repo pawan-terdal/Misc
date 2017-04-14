@@ -1,4 +1,0 @@
-﻿  Source.cpp
-c:\users\reddy\onedrive\programs\hackerrank visual studio\twostrings\source.cpp(20): warning C4018: '<': signed/unsigned mismatch
-c:\users\reddy\onedrive\programs\hackerrank visual studio\twostrings\source.cpp(24): warning C4018: '<': signed/unsigned mismatch
-  TwoStrings.vcxproj -> C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\Debug\TwoStrings.exe

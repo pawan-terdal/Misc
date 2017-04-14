@@ -1,6 +1,0 @@
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SuperHighwaysCS\bin\Debug\SuperHighwaysCS.exe.config
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SuperHighwaysCS\bin\Debug\SuperHighwaysCS.exe
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SuperHighwaysCS\bin\Debug\SuperHighwaysCS.pdb
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SuperHighwaysCS\obj\Debug\SuperHighwaysCS.csprojResolveAssemblyReference.cache
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SuperHighwaysCS\obj\Debug\SuperHighwaysCS.exe
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\SuperHighwaysCS\obj\Debug\SuperHighwaysCS.pdb

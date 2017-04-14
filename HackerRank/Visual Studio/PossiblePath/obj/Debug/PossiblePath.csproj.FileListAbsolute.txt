@@ -1,6 +1,0 @@
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\PossiblePath\bin\Debug\PossiblePath.exe.config
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\PossiblePath\bin\Debug\PossiblePath.exe
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\PossiblePath\bin\Debug\PossiblePath.pdb
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\PossiblePath\obj\Debug\PossiblePath.csprojResolveAssemblyReference.cache
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\PossiblePath\obj\Debug\PossiblePath.exe
-C:\Users\reddy\OneDrive\Programs\HackerRank Visual Studio\PossiblePath\obj\Debug\PossiblePath.pdb
