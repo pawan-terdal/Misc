@@ -1,0 +1,14 @@
+//Prim's Algorithm
+
+Choose a node and build a tree from there selecting at every stage the shortest available edge that
+can extend the tree to an additional node.
+ Prim's algorithm has the property that the edges in the set A always form a single tree.
+ We begin with some vertex v in a given graph G =(V, E), defining the initial set of vertices
+A.
+ In each iteration, we choose a minimum-weight edge (u, v), connecting a vertex v in the set
+A to the vertex u outside of set A.
+ The vertex u is brought in to A. This process is repeated until a spanning tree is formed.
+ Like Kruskal's algorithm, here too, the important fact about MSTs is we always choose the
+smallest-weight edge joining a vertex inside set A to the one outside the set A.
+ The implication of this fact is that it adds only edges that are safe for A; therefore when the
+algorithm terminates, the edges in set A form a MST 

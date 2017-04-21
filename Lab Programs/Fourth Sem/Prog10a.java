@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class Prog9a
+class Prog10a
 {
 	public static void Floyds(int matrix[][], int vertices)
 	{

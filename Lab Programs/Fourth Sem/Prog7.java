@@ -52,12 +52,13 @@ class Prog7
 	}
 	public static void Display(Node arr[], int vertices)
 	{
+        System.out.print("Vertices : \t\t");
 		for(int i = 0; i < vertices; i++)
 		{
 			System.out.print((char)(65 + arr[i].vertex) + "\t");
 		}
 		System.out.println();
-
+        System.out.print("Distance : \t\t");
 		for(int i = 0; i < vertices; i++)
 		{
 			if(arr[i].distance != 1.0/0)
@@ -66,10 +67,11 @@ class Prog7
 			}
 			else
 			{
-				System.out.print( "I\t");
+				System.out.print( "INF\t");
 			}
 		}
 		System.out.println();
+		System.out.print("Parent : \t\t");
 		for(int i = 0; i < vertices; i++)
 		{
 			System.out.print(arr[i].parent + "\t");
@@ -117,6 +119,7 @@ class Prog7
 
 		Display(arr,vertices);
 		Djikstra(matrix, arr, vertices, startVertex);
+		System.out.println("Djikstra's : ");
 		Display(arr,vertices);
 	}
 }

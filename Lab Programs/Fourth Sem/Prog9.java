@@ -7,7 +7,7 @@ class Node
 	public float distance;
 	public char parent;
 }
-class Prog8
+class Prog9
 {
 	public static void Insertion(Node arr[], int i, int j)
 	{
@@ -33,7 +33,7 @@ class Prog8
 		arr[i+1].parent = key.parent;
 	}
 
-	public static void Djikstra(float matrix[][], Node arr[], int vertices,int startVertex)
+	public static void Prim(float matrix[][], Node arr[], int vertices,int startVertex)
 	{
 		Scanner in = new Scanner(System.in);
 		for(int i = 1; i < vertices - 1; i++)
@@ -57,12 +57,13 @@ class Prog8
 	}
 	public static void Display(Node arr[], int vertices)
 	{
+        System.out.print("Vertices : \t\t");
 		for(int i = 0; i < vertices; i++)
 		{
 			System.out.print((char)(65 + arr[i].vertex) + "\t");
 		}
 		System.out.println();
-
+        System.out.print("Distance : \t\t");
 		for(int i = 0; i < vertices; i++)
 		{
 			if(arr[i].distance != 1.0/0)
@@ -71,10 +72,11 @@ class Prog8
 			}
 			else
 			{
-				System.out.print( "I\t");
+				System.out.print( "INF\t");
 			}
 		}
 		System.out.println();
+		System.out.print("Parent : \t\t");
 		for(int i = 0; i < vertices; i++)
 		{
 			System.out.print(arr[i].parent + "\t");
@@ -121,7 +123,8 @@ class Prog8
 		}
 
 		Display(arr,vertices);
-		Djikstra(matrix, arr, vertices, startVertex);
+		Prim(matrix, arr, vertices, startVertex);
+		System.out.println("Prims : ");
 		Display(arr,vertices);
 	}
 }

@@ -1,0 +1,10 @@
+//Floyd's Algorithm
+• Accept no .of vertices
+• Call graph function to read weighted graph // w(i,j)
+• Set D[ ] <- weighted graph matrix // get D {d(i,j)} for k=0
+• // If there is a cycle in graph, abort. How to find?
+• Repeat for k = 1 to n 
+  Repeat for i = 1 to n
+  Repeat for j = 1 to n
+   D[i,j] = min {D[i,j], D[i,k] + D[k,j]}
+• Print D 

@@ -1,0 +1,19 @@
+ 
+~/GitHub/MyRepos/Misc-Mini/Lab Programs/Fourth Sem master*
+❯ java Prog10a
+Enter number of vertices : 5
+Enter adjacency matrix for weighted digraph of n * n dimensions.
+0 2 7 -1 13
+-1 0 3 15 -1
+6 -1 0 2 -1
+7 -1 -1 0 9
+-1 -1 8 -1 0
+Floyds Matrix : 
+        1       2       3       4       5
+        -       -       -       -       -
+1|      0       2       5       7       13
+2|      9       0       3       5       14
+3|      6       8       0       2       11
+4|      7       9       12      0       9
+5|      14      16      8       10      0
+
