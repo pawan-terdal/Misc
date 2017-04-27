@@ -25,7 +25,7 @@ for url in urls:
     newUrls.append(url)
 
 print(len(newUrls))
-thresholdLikes = 20
+thresholdLikes = 300
 finalUrls = []
 urlRegex = re.compile(r'>(\d+)</button>')
 for url in newUrls:
