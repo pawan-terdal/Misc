@@ -13,11 +13,12 @@ class Prog12
 			if(matrix[vertex][0] != -1)
 			{
 				System.out.println("The Hamilton path is : ");
+				System.out.print("A, ");
 				for(int i = 0; i < count; i++)
 				{
 					System.out.print((char)(65 + (int) stack.Pop()) + ", ");
 				}
-				System.out.println((char)(65 + vertex));
+				System.out.println();
 				return true;
 			}
 			return false;

@@ -1,0 +1,27 @@
+Output
+
+~/GitHub/MyRepos/Misc-Mini/Lab Programs/Fourth Sem master*
+❯ java Prog12
+Enter number of vertices : 
+5
+Enter NxN adjacency matrix : 
+0 1 -1 1 1
+1 0 1 -1 -1
+-1 1 0 -1 1
+1 -1 -1 0 1
+1 -1 1 1 0
+The Hamilton path is : 
+A, D, E, C, B, A, 
+
+~/GitHub/MyRepos/Misc-Mini/Lab Programs/Fourth Sem master*
+❯ java Prog12
+Enter number of vertices : 
+5
+Enter NxN adjacency matrix : 
+0 1 -1 -1 1
+1 0 1 -1 -1
+-1 1 0 -1 1
+-1 -1 -1 0 1
+1 -1 1 1 0
+No Hamilton Circuit.
+

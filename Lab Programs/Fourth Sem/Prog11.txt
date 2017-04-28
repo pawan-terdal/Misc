@@ -1,0 +1,13 @@
+Output
+
+~/GitHub/MyRepos/Misc-Mini/Lab Programs/Fourth Sem master*
+❯ java Prog11       
+Enter number of elements : 
+5
+Enter elements : 
+1 2 5 6 8
+Enter Subset Sum : 
+9
+Subsets Are :
+[ 1 2 6 ]                                                                                                                 
+[ 1 8 ]     
