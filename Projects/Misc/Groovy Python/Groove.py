@@ -63,11 +63,11 @@ class SaveClient:
 		print("Done.")
 
 class Groove:
-	clientid = 'rednithin'
-	clientsecret = 'GitUOgchj++wiZuYx8rEuOorkB4gu5Keij5BaKyMafk='
-	serviceauth = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13"
+	clientid = 'fcb2b041-fe82-4c06-8a30-d28a9ddc805d'
+	clientsecret = 'uqBChgpbtw2ToiHiTUCk3fN'
+	serviceauth = "https://login.live.com/accesstoken.srf"
 	serviceapi = "https://music.xboxlive.com/1/content"
-	scope = "http://music.xboxlive.com"
+	scope = "app.music.xboxlive.com"
 	grantType = "client_credentials"
 	
 	def Search(self, key):
@@ -79,11 +79,15 @@ class Groove:
 
 		response = requests.post(self.serviceauth, data=requestData)
 		accessToken = response.json()['access_token']
-		myurl = self.serviceapi + '/music/search?q=' + urllib.parse.quote_plus(key) + '&maxItems=24&filters=Tracks' +'&accessToken=Bearer+' + urllib.parse.quote_plus(accessToken)
-		contentResponse = requests.get(myurl)
-
+		print(accessToken)
+		requestData.clear()
+		requestData["Authorization"] = 'Bearer ' + urllib.parse.quote_plus(accessToken)
+		requestData["accept"] = "application/json"
+		print(requestData)
+		myurl = "https://music.xboxlive.com/1/content/music/search?q=" + urllib.parse.quote_plus(key)
+		contentResponse = requests.get(myurl,headers=requestData) #data=requestData)
 		contentJson = contentResponse.json()
-
+		print(contentJson)
 		tracks = []
 		for item in contentJson['Tracks']['Items']:
 			track = Track()
