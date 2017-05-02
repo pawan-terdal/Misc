@@ -10,7 +10,7 @@ print("Number of Words Indexed : " + str(len(d)))
 print("Enter sweet spot : ", end='')
 sweetSpot = int(input().strip())
 mostUsedWords = sorted(d, key=d.__getitem__)[-sweetSpot:]
-#print(mostUsedWords)
+# print(mostUsedWords)
 
 keywords = []
 f.close()
