@@ -1,7 +1,6 @@
 """Scrape all the links for challenges completed."""
 import re
 import requests
-import pprint
 
 accounts = [["Nithin", "https://www.freecodecamp.com/rednithin"],
             ["Sharad", "https://www.freecodecamp.com/sharadbhat"],
