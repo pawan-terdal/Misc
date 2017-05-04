@@ -3,6 +3,25 @@ import java.util.*;
 
 class Prog12
 {
+	public static int getStackElement(Stack stack, int index)
+	{
+	  if (index == 0)
+	  {
+	    int num = stack.Pop();
+		stack.Push(new Integer(num));
+		return num;
+	  }
+
+	  int x = stack.Pop();
+	  try
+	  {
+	    return getStackElement(stack, index - 1);
+	  }
+	  finally
+	  {
+	    stack.Push(new Integer(x));
+	  }
+	}
 	public static boolean Hamilton(int vertex, int matrix[][], int visited[], Stack stack, int count, int vertices)
 	{
 		visited[vertex]++;
@@ -16,10 +35,10 @@ class Prog12
 				System.out.print("A, ");
 				for(int i = 0; i < count; i++)
 				{
-					System.out.print((char)(65 + (int) stack.Pop()) + ", ");
+					System.out.print((char)(65 + (int) getStackElement(stack, i)) + ", ");
 				}
 				System.out.println();
-				return true;
+				return false;
 			}
 			return false;
 		}

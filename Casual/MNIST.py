@@ -2,7 +2,7 @@
 
 # 3. Import libraries and modules
 
-import os
+# import os
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
