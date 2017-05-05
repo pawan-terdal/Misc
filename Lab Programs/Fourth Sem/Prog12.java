@@ -35,7 +35,7 @@ class Prog12
 				System.out.print("A, ");
 				for(int i = 0; i < count; i++)
 				{
-					System.out.print((char)(65 + (int) getStackElement(stack, i)) + ", ");
+					System.out.print((char)(65 + getStackElement(stack, i)) + ", ");
 				}
 				System.out.println();
 				return false;

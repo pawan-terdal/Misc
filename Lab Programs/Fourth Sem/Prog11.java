@@ -61,16 +61,3 @@ class Prog11
 		}
 	}
 }
-/*
-
-Enter number of elements : 
-5
-Enter elements : 
-1 2 5 6 8
-Enter Subset Sum : 
-16
-[ 1 2 5 8 ]
-[ 2 6 8 ]
-
-
-*/
