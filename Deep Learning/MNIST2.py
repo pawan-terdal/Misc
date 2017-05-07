@@ -4,7 +4,6 @@
 import tensorflow as tf
 from keras.datasets import mnist
 from keras.utils import np_utils
-from matplotlib import pyplot
 
 # get all images and make the data proper
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
