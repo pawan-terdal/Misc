@@ -5,7 +5,7 @@ from keras.models import Sequential
 from keras.layers.core import Dense
 
 trainX = np.arange(start=0, stop=1000)
-trainY = np.array([(2*i + 2*i*i + 3) for i in trainX])
+trainY = np.array([(2*i + 3) for i in trainX])
 
 model = Sequential()
 model.add(Dense(16, input_dim=1))
