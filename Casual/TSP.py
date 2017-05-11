@@ -5,18 +5,14 @@ from pprint import pprint
 
 costTable = {}
 parentTable = {}
-startvertex = 0
+startvertex = 1
 
 
 def FillTable(vertex, mySet):
     """Fill the tables."""
-    print(str(vertex) + "--------" + str(mySet))
     if(len(mySet) == 0):
         return
     mySSet = [str(num) for num in mySet]
-    minCost = 100000
-    minVertex = -1
-
     finalKey = str(vertex) + "," + "-".join(mySSet)
     if(finalKey in costTable.keys()):
         return
@@ -24,23 +20,47 @@ def FillTable(vertex, mySet):
     for i in mySet:
         newSet = copy.deepcopy(mySet)
         newSet.remove(i)
-        newSSet = [str(num) for num in newSet]
         for j in range(nVertices):
             if j == startvertex or j in newSet:
                 continue
-            myKey = str(j) + "," + "-".join(newSSet)
             FillTable(j, newSet)
-
-            print(str(j) + "--------" + str(vertex) + "------" +
-                  str(costTable[myKey]))
-            input()
-            myCost = costTable[myKey] + matrix[j][vertex]
-            if(myCost < minCost):
-                minCost = myCost
-                minVertex = j
-    costTable[finalKey] = minCost
-    parentTable[finalKey] = minVertex
+    costTable[finalKey] = -1
+    parentTable[finalKey] = -1
     return
+
+
+def Satisfy(key, subKey):
+    """Satisfaction Thing."""
+    for char in key:
+        if(char == "," or char == '-'):
+            continue
+        try:
+            subKey.index(char)
+        except(ValueError):
+            return False
+    return True
+
+
+def FindPath(myKeys):
+    """Find the route."""
+    path = []
+    key = myKeys[-1]
+    while len(path) != nVertices:
+        shortListedKeys = [i for i in myKeys[::-1]
+                           if i.startswith(str(parentTable[key]))]
+        path.append(str(parentTable[key]))
+        minCost = 10000000
+        for connectedKey in shortListedKeys:
+            if(len(key) - len(connectedKey) > 2):
+                continue
+            if(costTable[connectedKey] < minCost):
+                minCost = costTable[connectedKey]
+                nextKey = connectedKey
+
+        key = nextKey
+    path.reverse()
+    path.append(str(startvertex))
+    return path
 
 
 matrix = []
@@ -57,12 +77,32 @@ mySet.remove(startvertex)
 
 for num in mySet:
     costTable[str(num) + ","] = matrix[startvertex][num]
-    parentTable[str(num) + ","] = 0
+    parentTable[str(num) + ","] = startvertex
 
+print(mySet)
 FillTable(startvertex, mySet)
-pprint(costTable)
-pprint(parentTable)
+myKeys = sorted(costTable.keys(), key=len)
 
+for key in myKeys:
+    keyLength = len(key)
+    minCost = 10000000
+    minVertex = -1
+    if(costTable[key] != -1):
+        continue
+    for subKey in myKeys:
+        subKeyLength = len(subKey)
+        if(subKeyLength == keyLength):
+            break
+        if(Satisfy(key[2:], subKey)):
+            myCost = costTable[subKey] + matrix[int(subKey[0])][int(key[0])]
+            if(myCost < minCost):
+                minCost = myCost
+                minVertex = int(subKey[0])
+    costTable[key] = minCost
+    parentTable[key] = minVertex
+
+pprint("Cost is : " + str(costTable[myKeys[-1]]))
+pprint("Path is : " + "->".join(FindPath(myKeys)))
 """
 4
 0 1 15 6

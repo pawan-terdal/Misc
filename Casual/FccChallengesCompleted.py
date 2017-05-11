@@ -10,7 +10,8 @@ accounts = [["Nithin", "https://www.freecodecamp.com/rednithin"],
             ["Sudeep", "https://www.freecodecamp.com/mungarasudeep"],
             ["Yedida", "https://www.freecodecamp.com/yrahul3910"],
             ["Krishna", "https://www.freecodecamp.com/krishnarao-C"],
-            ["Ruta", "https://www.freecodecamp.com/Ruta-U"]]
+            ["Ruta", "https://www.freecodecamp.com/Ruta-U"],
+            ["Mohak", "https://www.freecodecamp.com/mohak666"]]
 
 d = {}
 for account in accounts:
