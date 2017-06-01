@@ -7,13 +7,13 @@ from tkinter import Tk
 from time import sleep
 
 i = 1
-reg = re.compile(r"15-05-2017 @11:15 PM")
+reg = re.compile(r"(all|bengaluru)")
 while(True):
-    url = "http://results.vtu.ac.in/results/result.php"
+    url = "http://result.vtu.ac.in"
     try:
-        arr = reg.findall(requests.get(url).text)
+        arr = reg.findall(requests.get(url).text.lower())
         print("{0}\r".format(str(i)), end="")
-        if(len(arr) != 1):
+        if(len(arr) != 0):
             print("Satisfied")
             for i in range(5000):
                 Tk().bell()
