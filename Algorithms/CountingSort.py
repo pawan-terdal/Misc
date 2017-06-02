@@ -1,5 +1,5 @@
 #!/usr/bin/python
-"""Counting Sort."""
+"""Counting Sort Algorithm."""
 
 import random
 
