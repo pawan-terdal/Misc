@@ -3,6 +3,7 @@
 import re
 import requests
 
+
 def download():
     """Download Marks."""
     dic = {}
@@ -51,15 +52,16 @@ def download():
         if name:
             dic.setdefault("1PE15ME{0:03d} >>".format(i) + name[0], float(sgpa[0][3:-4]))
 
-
     count = 1
     for key in sorted(dic, key=dic.__getitem__)[::-1]:
         print(str(count) + "))" + key + ">>>" + str(dic[key]))
         count += 1
 
+
 def main():
     """The main function."""
     download()
+
 
 if __name__ == '__main__':
     main()
