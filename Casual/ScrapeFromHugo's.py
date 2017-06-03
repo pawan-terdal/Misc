@@ -23,7 +23,6 @@ def PdfDownloader(url):
                 i += 1
         print("\nDOWNLOAD COMPLETE\n")
     except KeyboardInterrupt:
-        print
         print("\rDOWNLOAD INTERRUPTED")
         os.remove(fileName)
         exit(1)
