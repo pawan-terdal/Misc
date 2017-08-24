@@ -27,7 +27,7 @@ def n_queens(x, k, n):
     for i in range(n):
         if can_place(x, k, i):
             x[k] = i
-            if(k == n - 1):
+            if k == n - 1:
                 print(x)
             else:
                 n_queens(x, k+1, n)
