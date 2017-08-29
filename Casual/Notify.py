@@ -10,9 +10,9 @@ import requests
 def main():
     """Main function."""
     i = 1
-    reg = re.compile(r"(all|bengaluru)")
+    reg = re.compile(r"nithin")
     while True:
-        url = "http://result.vtu.ac.in"
+        url = "http://results.vtu.ac.in/cbcs_17/result_page.php?usn=1pe15is072"
         try:
             arr = reg.findall(requests.get(url).text.lower())
             print("{0}\r".format(str(i)), end="")
