@@ -41,7 +41,7 @@ def download():
         if name:
             dic.setdefault("1PE15EC{0:03d} >>".format(i) + name[0], float(sgpa[0][3:-4]))
 
-    # Mechanical
+    #Mechanical
     url = r"http://result.vtu.ac.in/cbcs_results2017.aspx?usn=1PE15ME{0:03d}&sem=3"
     for i in range(1, 195):
         text = requests.get(url.format(i)).text
