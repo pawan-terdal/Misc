@@ -20,15 +20,25 @@ namespace MyNamespace
 
   public class Generics
   {
-    // public static int Max(int a, int b)
-    // {
-    //   return a > b ? a : b;
-    // }
-
-    public static T Max<T>(T a, T b) where T: IComparable
+    public static int Max(int a, int b)
     {
-      return a.CompareTo(b) > 0 ? a : b;
+      return a > b ? a : b;
     }
+
+    public static double Max(double a, double b)
+    {
+      return a > b ? a : b;
+    }
+
+    public static Student Max(Student a, Student b)
+    {
+      return a.marks > b.marks ? a : b;
+    }
+
+    // public static T Max<T>(T a, T b) where T: IComparable
+    // {
+    //   return a.CompareTo(b) > 0 ? a : b;
+    // }
 
     public static void Main(String[] args)
     {
