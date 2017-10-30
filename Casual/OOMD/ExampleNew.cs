@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace MyNamspace
 {
-  public interface ISend
+  public interface INotifService
   {
     void Send();
   }
 
-  public class Email : ISend
+  public class Email : INotifService
   {
     public void Send()
     {
@@ -17,7 +17,7 @@ namespace MyNamspace
     }
   }
 
-  public class SMS : ISend
+  public class SMS : INotifService
   {
     public void Send()
     {
@@ -25,7 +25,7 @@ namespace MyNamspace
     }
   }
 
-  // public class Post : ISend
+  // public class Post : INotifService
   // {
   //   public void Send()
   //   {
@@ -35,17 +35,19 @@ namespace MyNamspace
 
   public class PayTM
   {
-    List<ISend> notificationChannels = new List<ISend>();
-    public void AddNotificationChannel(ISend notificationChannel)
+    List<INotifService> _notificationServices = new List<INotifService>();
+
+    public void AddNotificationChannel(INotifService notificationService)
     {
-      notificationChannels.Add(notificationChannel);
+      _notificationServices.Add(notificationService);
     }
+    
     public void Transact()
     {
       Console.WriteLine("Transactions being done.");
-      foreach (var notificationChannel in notificationChannels)
+      foreach (var notificationService in _notificationServices)
       {
-          notificationChannel.Send();
+          notificationService.Send();
       }
     }
   }
