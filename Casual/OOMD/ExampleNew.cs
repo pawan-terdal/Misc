@@ -37,7 +37,7 @@ namespace MyNamspace
   {
     List<INotifService> _notificationServices = new List<INotifService>();
 
-    public void AddNotificationChannel(INotifService notificationService)
+    public void AddNotificationService(INotifService notificationService)
     {
       _notificationServices.Add(notificationService);
     }
@@ -57,9 +57,9 @@ namespace MyNamspace
     public static void Main(string[] args)
     {
       PayTM payTM = new PayTM();
-      payTM.AddNotificationChannel(new Email());
-      payTM.AddNotificationChannel(new SMS());
-      // payTM.AddNotificationChannel(new Post());
+      payTM.AddNotificationService(new Email());
+      payTM.AddNotificationService(new SMS());
+      // payTM.AddNotificationService(new Post());
       payTM.Transact();
     }
   }    
