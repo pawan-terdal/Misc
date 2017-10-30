@@ -24,7 +24,7 @@ namespace MyNamespace
     //   return "Hello World!.";
     // }
 
-    public static void Main(String[] args)
+    public static void Main(string[] args)
     {
       Interface myInterface = new Interface();
       Console.WriteLine(myInterface.Hello());
