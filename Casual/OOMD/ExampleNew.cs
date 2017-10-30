@@ -41,10 +41,10 @@ namespace MyNamspace
     {
       _notificationServices.Add(notificationService);
     }
-    
+
     public void Transact()
     {
-      Console.WriteLine("Transactions being done.");
+      Console.WriteLine("Transaction being done.");
       foreach (var notificationService in _notificationServices)
       {
           notificationService.Send();
