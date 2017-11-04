@@ -1,8 +1,0 @@
-[nithin@nithin-pc Fourth Sem]$ java Prog3a
-Enter two numbers: 5 4
-Quotient : 1.25
-[nithin@nithin-pc Fourth Sem]$ java Prog3a
-Enter two numbers: 5 0
-Exception in thread "main" java.lang.IllegalArgumentException: Argument 'b' is 0
-        at Prog3a.main(Prog3a.java:16)
-[nithin@nithin-pc Fourth Sem]$ 
