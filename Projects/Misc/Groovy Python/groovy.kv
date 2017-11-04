@@ -1,0 +1,64 @@
+#: import main Main
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
+#: import FileChooserIconView kivy.uix.filechooser.FileChooserIconView
+
+<CustomPopup>
+    size_hint: .9, .9
+    auto_dismiss: False
+    title: 'Pick a File'
+    BoxLayout:
+        orientation: "vertical"
+        FileChooserIconView:
+            id: my_file_chooser
+            path: '/'
+        Button:
+            text: "Select and Close"
+            size_hint: 1, 0.1
+            id: select_file_button
+            on_press: root.dismiss(my_file_chooser.path,my_file_chooser.selection)
+    
+
+TrackDB:
+
+<TrackDB>:
+    orientation: "vertical"
+    search_text_input: search_key
+    track_list: track_list_view
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        size_hint_y: None
+        height: "40dp"
+
+        TextInput:
+            spacing: 10
+            id: search_key
+            hint_text: 'Song title here.'
+            multiline: False
+        Button:
+            spacing: 10
+            size_hint: .25, 1
+            text: "Search"
+            on_press: root.search_tracks()
+        
+    ListView:
+        id: track_list_view
+        adapter:
+            ListAdapter(data=[],cls=main.TrackListButton)
+
+    BoxLayout:
+        size_hint_y: None
+        height: "40dp"
+
+        Button:
+            spacing: 10
+            size_hint: .35, 1
+            text: "Open File"
+            on_press: root.select_file()
+
+        Button:
+            spacing: 10
+            text: "Save Tags and Art"
+            on_press: root.save_tags()

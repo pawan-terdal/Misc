@@ -1,0 +1,57 @@
+Output Program 6
+Name : P G Nithin Reddy (1PE15IS072)
+Script started on Saturday 01 October 2016 02:09:01 PM DST
+]0;redNithin@DESKTOP-OEB9L5G: /mnt/c/Users/reddy/Desktop/LinuxPrograms/LabredNithin@DESKTOP-OEB9L5G:/mnt/c/Users/reddy/Desktop/LinuxPrograms/Lab$ ./a.out 
+------------Menu------------
+1. Enqueue an element.
+2. Dequeue an element.
+3. Display a queue.
+4. Exit.
+
+Enter your choice : 1
+Enter a character : a
+
+Enter your choice : 1
+Enter a character : b
+
+Enter your choice : 1
+Enter a character : c
+
+Enter your choice : 1
+Enter a character : d
+Overflow.
+
+Enter your choice : 3
+a b c 
+
+Enter your choice : 2
+The element Dequeued is : a
+
+Enter your choice : 3
+b c 
+
+Enter your choice : 1
+Enter a character : a
+
+Enter your choice : 3
+b c a 
+
+Enter your choice : 2
+The element Dequeued is : b
+
+Enter your choice : 2
+The element Dequeued is : c
+
+Enter your choice : 2
+The element Dequeued is : a
+
+Enter your choice : 2
+Underflow.
+
+Enter your choice : 3
+Oueue Empty.
+
+Enter your choice : 4
+]0;redNithin@DESKTOP-OEB9L5G: /mnt/c/Users/reddy/Desktop/LinuxPrograms/LabredNithin@DESKTOP-OEB9L5G:/mnt/c/Users/reddy/Desktop/LinuxPrograms/Lab$ exit
+
+Script done on Saturday 01 October 2016 02:10:04 PM DST

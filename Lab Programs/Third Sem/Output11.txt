@@ -1,0 +1,35 @@
+nithin@pesit-HP-Compaq-dx2300-Microtower:~/Programs$ ./a.out 
+1. Create a Graph.
+2. Print all nodes reachable from a given node using BFS.
+3. Print all nodes reachable from a given node using DFS.
+0. Exit
+Enter choice : 1
+Enter Number Of Cities : 7
+Name of City 0 : A
+Name of City 1 : B
+Name of City 2 : C
+Name of City 3 : D
+Name of City 4 : E
+Name of City 5 : F
+Name of City 6 : G
+	A	B	C	D	E	F	G	
+A	0 	1	0	1	0	0	1
+B	0	0	1	0	1	0	0
+C	1	0	0	0	0	0	0
+D	0	0	0	0	0	0	1
+E	1	0	0	0	0	0	0
+F	0	1	1	0	0	0	0
+G	0	0	0	0	1	1	0
+Enter choice : 2
+Enter City Name : A
+The cities which can be visited : A B D G C E F 
+Enter choice : 3
+Enter City Name : A
+The cities which can be visited : A B C E D G F 
+Enter choice : 2
+Enter City Name : G
+The cities which can be visited : G E F A B C D 
+Enter choice : 3
+Enter City Name : G
+The cities which can be visited : G E A B C D F 
+Enter choice : 0

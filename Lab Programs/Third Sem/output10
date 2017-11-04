@@ -1,0 +1,58 @@
+nithin@nithin-Lenovo-Z51-70:~/Desktop/LinuxPrograms/Lab$ ./a.out 
+1. Insert N elements.
+2. Inorder Display.
+3. Preorder Display.
+4. Postorder Display.
+5. Binary Search.
+6. Delete a Node.
+0. Exit.
+Enter choice : 1
+Enter number of elements : 12
+Enter 12 elements : 6 9 5 2 8 15 24 14 7 8 5 2
+8 already Present. Duplicates not allowed.
+5 already Present. Duplicates not allowed.
+2 already Present. Duplicates not allowed.
+**************************************************************
+Enter choice : 2
+Inorder : 2 5 6 7 8 9 14 15 24 
+**************************************************************
+Enter choice : 3
+Preorder : 6 5 2 9 8 7 15 14 24 
+**************************************************************
+Enter choice : 4
+Postorder : 2 5 7 8 14 24 15 9 6 
+**************************************************************
+Enter choice : 5
+Enter an element to search : 15
+Element FOUND.
+**************************************************************
+Enter choice : 5
+Enter an element to search : 16
+Element NOT FOUND.
+**************************************************************
+Enter choice : 6
+Enter an element to delete : 2
+2 Deleted from BST.
+**************************************************************
+Enter choice : 6
+Enter an element to delete : 6
+6 Deleted from BST.
+**************************************************************
+Enter choice : 6
+Enter an element to delete : 15
+15 Deleted from BST.
+**************************************************************
+Enter choice : 6
+Enter an element to delete : 16
+16 Not Present in BST.
+**************************************************************
+Enter choice : 2
+Inorder : 5 7 8 9 14 24 
+**************************************************************
+Enter choice : 3
+Preorder : 7 5 9 8 24 14 
+**************************************************************
+Enter choice : 4
+Postorder : 5 8 14 24 9 7 
+**************************************************************
+Enter choice : 0

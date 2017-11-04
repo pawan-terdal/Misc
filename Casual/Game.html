@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue"></script>
+        <meta charset="utf-8">
+        <title>Hello</title>
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <p>Player</p>
+                <p>{{ playerHealth }}</p>
+                <div style="border:10px;height: 50px; width: 500px;">
+                    <div  :width="playerHealth*5" style="backgroundColor:green;height:50px;"></div>
+                </div>
+            </div>
+            <div>
+                <p>Monster</p>
+                <p>{{ monsterHealth }}</p>
+                <div style="border:10px;height: 50px; width: 500px;">
+                    <div :width="monsterHealth*5" style="backgroundColor:green;height:50px;"></div>
+                </div>
+            </div>
+            <div><button @click="attack">Attack</button><button @click="heal">Heal</button></div>
+            <ul id="clearid">
+                <li v-for="entry in entries">{{ entry }}</li>
+            </ul>
+        </div>
+        <script>
+            new Vue({
+                el: "#app",
+                data: {
+                    playerHealth: 100,
+                    monsterHealth: 100,
+                    entries: []
+                },
+                methods: {
+                    attack: function() {
+                        this.monsterHealth -= Math.floor(Math.random() * 10);
+                        this.playerHealth -= Math.floor(Math.random() * 15);
+                        this.entries.push("Player and Monster Attack.");
+                    },
+                    heal: function() {
+                        this.playerHealth += Math.floor(Math.random() * 10);
+                        this.playerHealth -= Math.floor(Math.random() * 15);
+                        this.entries.push("Player Heals and Monster Attacks.");
+                    }
+                },
+                watch: {
+                    'playerHealth': function() {
+                        if(this.playerHealth <= 0) {
+                            alert("You dead boy!!!");
+                            this.playerHealth = 100;
+                            this.monsterHealth = 100;
+                            this.entries = [];
+
+                        }
+                    },
+                    'monsterHealth': function() {
+                        if(this.monsterHealth <= 0) {
+                            alert("Monster is dead boy!!!");
+                            this.playerHealth = 100;
+                            this.monsterHealth = 100;
+                            this.entries = [];
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

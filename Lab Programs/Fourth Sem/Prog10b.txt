@@ -1,0 +1,23 @@
+Output
+
+~/GitHub/MyRepos/Misc-Mini/Lab Programs/Fourth Sem master* 12s
+❯ java Prog10b
+Enter no. of nodes:=>
+4
+Enter weight of 1 to 2:=>1
+Enter weight of 1 to 3:=>15
+Enter weight of 1 to 4:=>6
+Enter weight of 2 to 1:=>2
+Enter weight of 2 to 3:=>7
+Enter weight of 2 to 4:=>3
+Enter weight of 3 to 1:=>9
+Enter weight of 3 to 2:=>6
+Enter weight of 3 to 4:=>12
+Enter weight of 4 to 1:=>10
+Enter weight of 4 to 2:=>4
+Enter weight of 4 to 3:=>8
+
+Starting node assumed to be node 1.
+
+The tour is 1-2-4-3-1
+The final cost is 21

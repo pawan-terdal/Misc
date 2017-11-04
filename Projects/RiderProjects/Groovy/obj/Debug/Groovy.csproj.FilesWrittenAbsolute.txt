@@ -1,0 +1,5 @@
+/home/nithin/Documents/Projects/RiderProjects/Groovy/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/nithin/Documents/Projects/RiderProjects/Groovy/bin/Debug/Groovy.exe.mdb
+/home/nithin/Documents/Projects/RiderProjects/Groovy/bin/Debug/Groovy.exe
+/home/nithin/Documents/Projects/RiderProjects/Groovy/obj/Debug/Groovy.exe
+/home/nithin/Documents/Projects/RiderProjects/Groovy/obj/Debug/Groovy.exe.mdb

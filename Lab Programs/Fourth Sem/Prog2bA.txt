@@ -1,0 +1,45 @@
+"""Psuedo Code"""
+
+
+Step 1 : Start
+
+
+Step 2 : Create Class Customer.
+class Customer
+{
+    public :
+        String Name;
+        int Date, Month, Year;
+        Customer(input)
+        void Display();
+}
+
+Customer::Customer(input)
+    1. Tokenize the Input String.
+    2. Separate and Store Details in Instance Variables.
+
+void Customer::Display()
+    1. Display in format <Name, DD, MM, YYYY>
+    
+
+Step 3 : Define Main Method.
+    1. Display Menu.
+    2. Customer customers = new Customer[100];
+    3. while(true)
+            Read choice.
+            if(choice = 1)
+                Read count
+                for i = 0 to count - 1 do:
+                    Read input in <Name, DD/MM/YYYY> format.
+                    customers[i] = new Customer(input);
+            else if(choice = 2)
+                for i = 1 to count do:
+                    customers[i].Display();
+            else if(choice = 3)
+                Exit()
+            else
+                Write("Wrong Option.") 
+
+Step 4 : Exit.
+    
+    

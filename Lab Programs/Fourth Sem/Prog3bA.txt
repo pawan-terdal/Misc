@@ -1,0 +1,59 @@
+"""Psuedo Code"""
+
+
+Step 1 : Start
+
+
+Step 2 : Define Class Number
+class Number
+{
+    public static int number;
+    public static int iterations;
+}
+
+Step 3 : Define FindRandomThread which Implements Runnable
+class FindRandomThread implements Runnable
+{
+    public void run();
+}
+
+void FindRandomThread::run()
+    1. Initialise Number.number = Math.random();
+    2. Print(Number.number)
+    3. Sleep Thread.
+    
+    
+Step 4 : Define SquareThread which Implements Runnable
+class SquareThread implements Runnable
+{
+    public void run();
+}
+
+void SquareThread::run()
+    1. Print(Number.number^2)
+    2. Sleep Thread.
+
+
+Step 5 : Define CubeThread which Implements Runnable
+class CubeThread implements Runnable
+{
+    public void run();
+}
+
+void CubeThread::run()
+    1. Print(Number.number^3)
+    2. Sleep Thread.
+
+
+Step 6 : Define Main Method.
+    1. Read Number.iterations
+    2. Thread threads = new thread[3];
+    3. threads[0] = new Thread(new FindRandomThread());
+    4. threads[1] = new Thread(new SquareThread());
+    5. threads[2] = new Thread(new CubeThread());
+    6. for i = 0 to 2 do :
+            threads[i].start()
+    7.Return
+    
+    
+Step 7 : Exit.

@@ -1,0 +1,36 @@
+""" Psuedo Code """
+
+
+Step 1 : Start
+
+Step 2 : Define Swap Function
+public static void Swap(int []arr, int i, int j)
+    1. Swap the numbers arr[i] and arr[j]
+
+    
+Step 3 : Define MergeSort function.
+public static void MergeSort(int []arr, int p, int r)
+    1. If p >= r
+        Return.
+    2. q = (p + r) / 2
+    3. Call MergeSort(arr, p, q)
+    4. Call MergeSort(arr, q + 1, r)
+    5. Call Merge(arr, p, q, r)
+
+Step 4 : Define Merge funciton
+public static int Merge(int []arr, int p, int q, int r)
+    1. Copy sorted sub arrays arr[p...q] and arr[q+1....r] int arr1 and arr2.
+    2. Put the elements in arr1 and arr2 to arr[p...r] in a sorted manner.
+    3. Return.
+
+    
+Step 5 : Define main method
+    1. Create an array of 5000 random elements.
+    2. Record Time.
+    3. Call MergeSort() function.
+    4. Stop recording Time.
+    5. Display length and elapsed Time.
+    6. Repeat the above steps for different lengths.
+
+    
+Step 6 : End
