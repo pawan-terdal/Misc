@@ -21,7 +21,7 @@ public class Prog12 {
     for(int packet: packets)
     {
       System.out.print(currQ + "\t");
-      System.out.print(packet + "\t");
+      System.out.print("+" + packet + "\t");
       int dropped = 0;
       if(currQ + packet > queueLimit) {
         dropped = (currQ + packet) - queueLimit;
@@ -31,7 +31,7 @@ public class Prog12 {
         currQ += packet;
       }
       System.out.print(currQ + "\t");
-      System.out.print(dropped + "\t");
+      System.out.print("x" + dropped + "\t");
       int sent = linkSpeed;
       if(currQ - linkSpeed < 0) {
         sent = currQ;
@@ -40,7 +40,7 @@ public class Prog12 {
       else {
         currQ -= linkSpeed;
       }
-      System.out.print(sent + "\t");
+      System.out.print("-" + sent + "\t");
       System.out.println(currQ + "\t");
     }
   }  
