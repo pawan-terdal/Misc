@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Prog7 {
   static String AppendZeros(String myString, int length) {
-    for(int i = 0; i < length - 1; i++)
+    for(int i = 0; i < length; i++)
       myString += '0';
     return myString;
   }
@@ -14,7 +14,7 @@ public class Prog7 {
   }
   static String CRC(String dividend, String divisor, boolean isGenerator) {
     if(isGenerator == true)
-      dividend = AppendZeros(dividend, divisor.length());
+      dividend = AppendZeros(dividend, divisor.length() - 1);
     String remainder = dividend.substring(0, divisor.length());
     int i = divisor.length();
     while(true)
