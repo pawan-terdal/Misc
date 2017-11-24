@@ -13,6 +13,7 @@ proc finish {} {
     exec awk -f 3-script.awk 3-out2.tr > 3-out2.txt &
     exec awk -f 3-script.awk 3-out1.tr > 3-out1.txt &
     exec nam 3-out.nam &
+    exec xgraph 3-out1.txt 3-out2.txt &
     exit 0
 }
 
