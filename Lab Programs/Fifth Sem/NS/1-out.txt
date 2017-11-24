@@ -1,0 +1,2 @@
+No of CBR packets droppped 10
+No of TCP packets droppped 3
